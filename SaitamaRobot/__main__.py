@@ -52,7 +52,7 @@ def get_readable_time(seconds: int) -> str:
 
 PM_START_TEXT = """
 Hi {}, my name is {}! 
-I am a Superb Group Management Bot.
+I am a smol but smart Group Management Bot, add me to your group and make it 👑
 You can find my list of available commands with /help.
 """
 
@@ -75,7 +75,7 @@ And the following:
     dispatcher.bot.first_name, ""
     if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
 
-ROMEO_IMG = "https://telegra.ph/file/929a3cffe8935f0a445e6.jpg"
+BILLYGUARDIAN_IMG = "https://telegra.ph/file/cfe1fd3cf1aac68343fa4.jpg"
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -200,15 +200,15 @@ def start(update: Update, context: CallbackContext):
                      [
                          InlineKeyboardButton(
                              text="🚑 Support Channel",
-                             url=f"https://t.me/Romeo_JulietBot_Support"),
+                             url=f"https://t.me/billyguardian"),
                          InlineKeyboardButton(
                              text="Support Chat 🚑",
-                             url="https://t.me/Romeo_JulietBotSupport")
+                             url="https://t.me/billyguardian")
                      ],
                      [
                          InlineKeyboardButton(
-                             text="🧑‍💻Developer🧑‍💻",
-                             url="https://t.me/Warning_MadBoy_is_Here")
+                             text="🎩 Developer",
+                             url="https://t.me/wancoins")
                      ],
                      [
                          InlineKeyboardButton(
