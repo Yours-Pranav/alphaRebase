@@ -184,7 +184,7 @@ def start(update: Update, context: CallbackContext):
         else:
             first_name = update.effective_user.first_name
             update.effective_message.reply_photo(
-                ROMEO_IMG,
+                BILLYGUARDIAN_IMG_IMG,
                 PM_START_TEXT.format(
                     escape_markdown(first_name),
                     escape_markdown(context.bot.first_name)),
@@ -213,7 +213,7 @@ def start(update: Update, context: CallbackContext):
                      [
                          InlineKeyboardButton(
                              text="🗄 Source code",
-                             url="https://github.com/madboy482/Romeo")
+                             url="https://github.com/billybot482/Romeo")
                      ]]))
     else:
         update.effective_message.reply_text(
