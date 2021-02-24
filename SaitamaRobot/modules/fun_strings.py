@@ -37,6 +37,17 @@ SLAP_SAITAMA_TEMPLATES = (
         "Silence!"
     ])
 
+GAME_TEMPLATES = (
+    "you cant use this agasint me",
+    "use this agasint other people",
+    [
+        "I am muting you for a minute.",  # normal reply
+        "Stop it",  # reply to admin
+        "tmute",  # command
+        "Shut up!",
+        "Silence!"
+    ])
+
 BILLY_TEMPLATES = (
     "{user1} summon King billy to kill {user2}.",
     "{user2} was murdered and eaten by Billy.",
@@ -48,7 +59,95 @@ BILLY_TEMPLATES = (
     "死.",
     " 比例王出现， 全部低头！.",
     "{user2} surrender now or ill call king billy",
+    "{user1} go to groundpound {user2} mom and user 2 fucked up." , 
+    
 )
+
+HP = (
+    " You missed 
+     - 0 hp 
+    ❤️ ██████████"
+    
+    "CRITICAL -10 hp
+    ❤️ ▒▒▒▒▒▒▒▒▒▒
+       .K.O. "
+    
+    " -1 hp 
+    ❤️ █████████▒"
+    
+    " -2 hp
+    ❤️ ████████▒▒"
+    
+    " -3 hp
+    ❤️ ███████▒▒▒"
+    
+    " -4 hp
+    ❤️ ██████▒▒▒▒"
+    
+    " - 5 hp
+    ❤️ █████▒▒▒▒▒"
+    
+    " -6 hp
+    ❤️ ████▒▒▒▒▒▒"
+    
+    " -7 hp 
+    ❤️ ███▒▒▒▒▒▒▒"
+    
+    " -8 hp
+    ❤️ ██▒▒▒▒▒▒▒▒"
+    
+    " -9 hp 
+    ❤️ █▒▒▒▒▒▒▒▒▒"
+    
+)
+
+FIRE = ( 
+    "🔥🔥🔥🔥🔥🔥 Fire Whips"
+    "🔥🔥🔥🔥🔥🔥 Fire Whips"
+    "🔥🔥🔥🔥🔥🔥 Fire Whips"
+    "🔥🔥🔥🔥🔥🔥 Fire Whips"
+    "🔥🔥🔥Fire Splashes🔥🔥🔥"
+    "🔥🔥🔥Fire Splashes🔥🔥🔥"
+    "🔥🔥🔥Fire Splashes🔥🔥🔥"
+    "🔥🔥🔥Fire Splashes🔥🔥🔥"
+    "Fire🔥"
+    "Fire🔥"
+    "Fire🔥"
+    "Fire🔥"
+    "Fire🔥"
+    "Fire🔥"
+    "Fire🔥"
+    "Fire🔥"
+    "Fire🔥"
+    "Fire🔥"
+    "Multi fire punch🔥🔥🔥🔥🔥
+    "Multi fire punch🔥🔥🔥🔥🔥
+    "Multi fire punch🔥🔥🔥🔥🔥
+    
+    "🔥🔥🔥🔥Wall of Fires
+    🔥🔥🔥🔥🔥
+    "
+    "🔥🔥🔥🔥Wall of Fires
+    🔥🔥🔥🔥🔥
+    "
+    "🔥🔥🔥🔥Wall of Fires
+    🔥🔥🔥🔥🔥
+    "
+    "lightning strikes ⚡⚡⚡"
+    "💥💥💥💥💥💥💥
+    💥💥Combustion💥💥
+    💥💥💥💥💥💥💥"
+
+FIRE_GAME = (
+    "{user1} uses {fire} against {user2} : resulted in {hp}
+     "
+    "{user1} came out suddenly and use {fire} to sneak attack {user2} : resulted in {hp}"
+    "{user2} being attack by {fire} by {user1} : resulted in {hp}"
+    "{user1} 使用 {fire} 攻击 {user2} : resulted in {hp}"
+    "{user1} rage up and pour all enegry into {fire} and dealt it to {user2} : resulted in {hp}"
+    "{user2} try to dodge {user1}'s {fire} attack while {user1} snuck up on {user2}: resulted in {hp}"
+    
+)    
 
 SLAP_TEMPLATES = (
     "{user2} was killed by magic.",
