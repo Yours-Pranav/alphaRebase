@@ -296,6 +296,7 @@ def weebify(update: Update, context: CallbackContext):
 __help__ = """
  • `/runs`*:* reply a random string from an array of replies
  • `/slap`*:* slap a user, or get slapped if not a reply
+ • `/billy`*:*  custom made by billy
  • `/shrug`*:* get shrug XD
  • `/table`*:* get flip/unflip :v
  • `/decide`*:* Randomly answers yes/no/maybe
@@ -348,7 +349,7 @@ __command_list__ = [
     "table", "pat", "sanitize", "shout", "weebify", "8ball"
 ]
 __handlers__ = [
-    RUNS_HANDLER, SLAP_HANDLER, PAT_HANDLER, ROLL_HANDLER, TOSS_HANDLER,
+    RUNS_HANDLER, SLAP_HANDLER, BILLY_HANDLER, PAT_HANDLER, ROLL_HANDLER, TOSS_HANDLER,
     SHRUG_HANDLER, BLUETEXT_HANDLER, RLG_HANDLER, DECIDE_HANDLER, TABLE_HANDLER,
     SANITIZE_HANDLER, SHOUT_HANDLER, WEEBIFY_HANDLER, EIGHTBALL_HANDLER
 ]
