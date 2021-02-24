@@ -172,7 +172,47 @@ WATER = (
 " 🧊🧊🧊Ice Spikes🧊🧊🧊", 
 "💧Water💧slices💧", 
 "❄️Ice💧Water Combo", 
+" Summoning Rain 🌧🌧 🌧🌧", 
+" Summoning Rain 🌧🌧 🌧🌧", 
+" Summoning Rain 🌧🌧 🌧🌧", 
+"""🐳 🐳🐳 Ocean attack 🐳
+🐳🐳🐳🐳🐳Raid🐳🐳🐳🐳🐳"""
+) 
+WATER_GAME_TEMPLATES = (
+    """{user1} uses {water} against {user2}. 
+    
+       {hp}
+     """ ,
+     """{user1} summon {fire} onto {user2}. 
+    
+       {hp}
+     """ ,
+    
+     """{user1} take a deep breath, concentrate, inner peace, and releases {water} against {user2}. 
+    
+       {hp}
+     """ ,
 
+     """{user2} peed his pant because {user1} was attacking him with {water}. 
+    
+       {hp}
+     """ ,
+    
+     """ {water} was used by {user1} to attack {user2}, and now {user2} hair all wet. 
+    
+       {hp}
+     """ ,
+
+     """{user1} used up all his/her Power with {water} against {user2}, good game. 
+    
+       {hp}
+     """ ,
+    
+     """ {user1} Jackoff {water} and flooding {user2} with it. 
+    
+       {hp}
+     """ ,
+) 
 
 
 FIRE_GAME_TEMPLATES = (
