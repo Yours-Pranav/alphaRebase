@@ -120,9 +120,9 @@ FIRE = (
     "Fire🔥"
     "Fire🔥"
     "Fire🔥"
-    "Multi fire punch🔥🔥🔥🔥🔥
-    "Multi fire punch🔥🔥🔥🔥🔥
-    "Multi fire punch🔥🔥🔥🔥🔥
+    """Multi fire punch🔥  🔥 🔥  🔥 🔥"""
+    """Multi fire punch🔥  🔥 🔥  🔥 🔥"""
+    """Multi fire punch🔥  🔥 🔥  🔥 🔥"""
     
     """🔥🔥🔥🔥Wall of Fires
     🔥🔥🔥🔥🔥
