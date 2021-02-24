@@ -80,7 +80,7 @@ def billy(update: Update, context: CallbackContext):
     temp = random.choice(fun_strings.BILLY_TEMPLATES)
 
     if update.effective_user.id == 163494588:
-        temp = "{user1} become King Billy's kid"
+        temp = "{user1} is already the king"
 
     reply = temp.format(
         user1=user1, user2=user2,)
