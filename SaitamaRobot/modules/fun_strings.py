@@ -37,6 +37,19 @@ SLAP_SAITAMA_TEMPLATES = (
         "Silence!"
     ])
 
+BILLY_TEMPLATES = (
+    "{user1} summon King billy to kill {user2}.",
+    "{user2} was murdered and eaten by Billy.",
+    "Mighty Billy Stomp across the land and crushed {user2}.",
+    "{user2} {user2} {user2} {user2} come out come out wherever you are , i will catch you and feed you to Billy's pet",
+    "{user1} is now safe because billy is on his side.",
+    "{user2} better prepare another diaper because you will need one soon",
+    "{user1} was granted power of ⚡ thunder by King billy , now {user2} will face death.",
+    "死.",
+    " 比例王出现， 全部低头！.",
+    "{user2} surrender now or ill call king billy",
+)
+
 SLAP_TEMPLATES = (
     "{user2} was killed by magic.",
     "{user2} starved without pats.",
