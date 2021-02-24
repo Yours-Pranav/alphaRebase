@@ -745,7 +745,6 @@ def reset_goodbye(update: Update, context: CallbackContext) -> str:
 
 
 @run_async
-@user_admin
 @loggable
 def welcomemute(update: Update, context: CallbackContext) -> str:
     args = context.args
@@ -797,7 +796,6 @@ def welcomemute(update: Update, context: CallbackContext) -> str:
 
 
 @run_async
-@user_admin
 @loggable
 def clean_welcome(update: Update, context: CallbackContext) -> str:
     args = context.args
