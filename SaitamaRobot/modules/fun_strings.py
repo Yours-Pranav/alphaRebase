@@ -64,7 +64,7 @@ BILLY_TEMPLATES = (
 )
 
 HP = (
-    " You missed 
+    "You missed
      - 0 hp 
     ❤️ ██████████"
     
