@@ -63,6 +63,57 @@ BILLY_TEMPLATES = (
     
 )
 
+LEWD = (
+     " Pur Pur Pur 🥺🥺", 
+     " Ara Ara 🤤🤤", 
+     " Licky lick lick 💦", 
+     " Sucky suck suck", 
+     " Head Pat", 
+     " Sleep together", 
+     " do naughty things tonight", 
+     " meow meow 🐈", 
+     " Woof woof 🐶", 
+     " Steal Panties 👙", 
+     " Snuck into Bra", 
+     " rub rub boobies", 
+     " Hug", 
+     " kiss", 
+) 
+
+METER = (
+     "■□□□□", 
+     "■■□□□", 
+     "■■■□□", 
+     "■■■■□", 
+     "□□□□□", 
+     "■■■■■", 
+) 
+
+MEOW_TEMPLATES = (
+     """ {user1} wants to {lewd} {user2} 
+        Lewd meter
+        {meter} """, 
+     """ {user1} request {lewd} from {user2}, now {user2}, give your answer fast! 
+        Lewd meter
+        {meter} """, 
+     """ {user1} force {lewd} on {user2} without any chance of escape. 
+        Lewd meter
+        {lewd} """, 
+     """ {user2} being {lewd} by {user1}. Enjoying to fullest. 
+        Lewd meter
+        {lewd} """, 
+     """ {user1} drunked and accidentally {lewd} {user2}. Ops. Now you both have to marry each other. 
+        Lewd meter
+        {lewd} """, 
+     """ {user1} 忍不住想要 {lewd} {user2}!! 
+        Lewd meter
+        {lewd} """, 
+     """ {user1} invited {user2} to {lewd} after everyone else had gone to bed. 
+        Lewd meter
+        {lewd} """, 
+) 
+
+
 HP = (
     """You missed
      - 0 hp\ 
