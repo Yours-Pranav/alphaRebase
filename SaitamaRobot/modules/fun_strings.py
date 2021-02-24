@@ -64,40 +64,40 @@ BILLY_TEMPLATES = (
 )
 
 HP = (
-    "You missed\
+    """You missed
      - 0 hp\ 
-    ❤️ ██████████"
+    ❤️ ██████████"""
     
-    "CRITICAL -10 hp\
+    """CRITICAL -10 hp
     ❤️ ▒▒▒▒▒▒▒▒▒▒
-       .K.O. "
+       .K.O. """
     
-    " -1 hp\
-    ❤️ █████████▒"
+    """ -1 hp
+    ❤️ █████████▒"""
     
-    " -2 hp\
-    ❤️ ████████▒▒"
+    """ -2 hp
+    ❤️ ████████▒▒"""
     
-    " -3 hp\
-    ❤️ ███████▒▒▒"
+    """ -3 hp
+    ❤️ ███████▒▒▒"""
     
-    " -4 hp\
-    ❤️ ██████▒▒▒▒"
+    """ -4 hp
+    ❤️ ██████▒▒▒▒"""
     
-    " - 5 hp\
-    ❤️ █████▒▒▒▒▒"
+    """ - 5 hp
+    ❤️ █████▒▒▒▒▒"""
     
-    " -6 hp\
-    ❤️ ████▒▒▒▒▒▒"
+    """ -6 hp
+    ❤️ ████▒▒▒▒▒▒"""
     
-    " -7 hp\ 
-    ❤️ ███▒▒▒▒▒▒▒"
+    """ -7 hp
+    ❤️ ███▒▒▒▒▒▒▒"""
     
-    " -8 hp\
-    ❤️ ██▒▒▒▒▒▒▒▒"
+    """ -8 hp
+    ❤️ ██▒▒▒▒▒▒▒▒"""
     
-    " -9 hp\ 
-    ❤️ █▒▒▒▒▒▒▒▒▒"
+    """ -9 hp\ 
+    ❤️ █▒▒▒▒▒▒▒▒▒"""
     
 )
 
@@ -124,28 +124,40 @@ FIRE = (
     "Multi fire punch🔥🔥🔥🔥🔥
     "Multi fire punch🔥🔥🔥🔥🔥
     
-    "🔥🔥🔥🔥Wall of Fires\
+    """🔥🔥🔥🔥Wall of Fires
     🔥🔥🔥🔥🔥
-    "
-    "🔥🔥🔥🔥Wall of Fires\
+    """
+    """🔥🔥🔥🔥Wall of Fires
     🔥🔥🔥🔥🔥
-    "
-    "🔥🔥🔥🔥Wall of Fires\
+    """
+    """🔥🔥🔥🔥Wall of Fires
     🔥🔥🔥🔥🔥
-    "
+    """
     "lightning strikes ⚡⚡⚡"
-    "💥💥💥💥💥💥💥\
+    """💥💥💥💥💥💥💥
     💥💥Combustion💥💥
-    💥💥💥💥💥💥💥"
+    💥💥💥💥💥💥💥"""
 
 FIRE_GAME = (
-    "{user1} uses {fire} against {user2} : resulted in {hp}
-     "
-    "{user1} came out suddenly and use {fire} to sneak attack {user2} : resulted in {hp}"
-    "{user2} being attack by {fire} by {user1} : resulted in {hp}"
-    "{user1} 使用 {fire} 攻击 {user2} : resulted in {hp}"
-    "{user1} rage up and pour all enegry into {fire} and dealt it to {user2} : resulted in {hp}"
-    "{user2} try to dodge {user1}'s {fire} attack while {user1} snuck up on {user2}: resulted in {hp}"
+    """{user1} uses {fire} against {user2} 
+    
+       {hp}
+     """
+    """{user1} came out suddenly and use {fire} to sneak attack {user2}
+    
+       {hp}"""
+    """{user2} being attack by {fire} by {user1} 
+    
+       {hp}"""
+    """{user1} 使用 {fire} 攻击 {user2} 
+    
+       {hp}"""
+    """{user1} rage up and pour all enegry into {fire} and dealt it to {user2}
+    
+       {hp}"""
+    """{user2} try to dodge {user1}'s {fire} attack while {user1} snuck up on {user2}
+    
+       {hp}"""
     
 )    
 
