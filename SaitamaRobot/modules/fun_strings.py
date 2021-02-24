@@ -137,6 +137,7 @@ FIRE = (
     """💥💥💥💥💥💥💥
     💥💥Combustion💥💥
     💥💥💥💥💥💥💥"""
+)
 
 THE_FIRE_GAME = (
     """{user1} uses {fire} against {user2} 
@@ -157,7 +158,8 @@ THE_FIRE_GAME = (
        {hp}"""
     """{user2} try to dodge {user1}'s {fire} attack while {user1} snuck up on {user2}
     
-       {hp}""" )
+       {hp}""" 
+)
 
 SLAP_TEMPLATES = (
     "{user2} was killed by magic.",
