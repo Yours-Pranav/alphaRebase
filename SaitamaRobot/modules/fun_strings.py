@@ -139,7 +139,7 @@ FIRE = (
     💥💥💥💥💥💥💥"""
 )
 
-THE_FIRE_GAME = (
+FIRE_GAME_TEMPLATES = (
     """{user1} uses {fire} against {user2} 
     
        {hp}
