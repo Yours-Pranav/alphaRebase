@@ -238,7 +238,7 @@ def water(update: Update, context: CallbackContext):
 
     temp = random.choice(fun_strings.WATER_GAME_TEMPLATES)
     hp = random.choice(fun_strings.HP)
-    water = random.choice(fun_strings.FIRE)
+    water = random.choice(fun_strings.WATER)
 
     if update.effective_user.id == 1096215023:
         temp = "@NeoTheKitty scratches {user2}"
