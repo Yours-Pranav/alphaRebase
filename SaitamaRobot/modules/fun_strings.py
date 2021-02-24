@@ -98,19 +98,19 @@ MEOW_TEMPLATES = (
         {meter} """, 
      """ {user1} force {lewd} on {user2} without any chance of escape. 
         Lewd meter
-        {lewd} """, 
+        {meter} """, 
      """ {user2} being {lewd} by {user1}. Enjoying to fullest. 
         Lewd meter
-        {lewd} """, 
+        {meter} """, 
      """ {user1} drunked and accidentally {lewd} {user2}. Ops. Now you both have to marry each other. 
         Lewd meter
-        {lewd} """, 
+        {meter} """, 
      """ {user1} 忍不住想要 {lewd} {user2}!! 
         Lewd meter
-        {lewd} """, 
+        {meter} """, 
      """ {user1} invited {user2} to {lewd} after everyone else had gone to bed. 
         Lewd meter
-        {lewd} """, 
+        {meter} """, 
 ) 
 
 
