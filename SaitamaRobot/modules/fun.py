@@ -190,7 +190,7 @@ def fire(update: Update, context: CallbackContext):
         temp = "@NeoTheKitty scratches {user2}"
 
     reply = temp.format(
-        user1=user1, user2=user2, hp=hp)
+        user1=user1, user2=user2, hp=hp, fire=fire)
 
     reply_text(reply, parse_mode=ParseMode.HTML)    
     
