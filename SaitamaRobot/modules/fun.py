@@ -420,7 +420,7 @@ __help__ = """
 """
 
 SANITIZE_HANDLER = DisableAbleCommandHandler("sanitize", sanitize)
-FIRE_HANDLER = DisableAbleCommandHandler("water", water)
+WATER_HANDLER = DisableAbleCommandHandler("water", water)
 FIRE_HANDLER = DisableAbleCommandHandler("fire", fire)
 RUNS_HANDLER = DisableAbleCommandHandler("runs", runs)
 SLAP_HANDLER = DisableAbleCommandHandler("slap", slap)
