@@ -185,6 +185,7 @@ def fire(update: Update, context: CallbackContext):
 
     temp = random.choice(fun_strings.FIRE_GAME)
     hp = random.choice(fun_strings.HP)
+    fire = random.choice(fun_strings.FIRE)
 
     if update.effective_user.id == 1096215023:
         temp = "@NeoTheKitty scratches {user2}"
