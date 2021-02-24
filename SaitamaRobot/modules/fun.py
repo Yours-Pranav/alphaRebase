@@ -183,7 +183,7 @@ def fire(update: Update, context: CallbackContext):
         user1 = bot.first_name
         user2 = curr_user
 
-    temp = random.choice(fun_strings.THE_FIRE_GAME)
+    temp = random.choice(fun_strings.FIRE_GAME_TEMPLATES)
     hp = random.choice(fun_strings.HP)
     fire = random.choice(fun_strings.FIRE)
 
