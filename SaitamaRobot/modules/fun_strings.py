@@ -139,6 +139,42 @@ FIRE = (
     💥💥💥💥💥💥💥""" ,
 )
 
+WATER = (
+"""🌊🌊🌊🌊🌊
+   🌊🌊🌊🌊🌊
+   🌊🌊🌊🌊🌊 Tsunami
+                    🌊🌊🌊🌊🌊
+                    🌊🌊🌊🌊🌊
+                    🌊🌊🌊🌊🌊""", 
+"💦 water blitz", 
+"💦 water blitz", 
+"💦 water blitz", 
+"💧 A drop in the ocean", 
+"💧 A drop in the ocean", 
+"💧 A drop in the ocean", 
+"💧 A drop in the ocean", 
+"🌊 Giga 🌊 Waves 🌊", 
+" Water Splash 💦💦💦💦", 
+"🌊 Giga 🌊 Waves 🌊", 
+" Water Splash 💦💦💦💦", 
+"💧Water💧slices💧", 
+"💧Water💧slices💧", 
+"💧Water💧slices💧", 
+"🌊 Giga 🌊 Waves 🌊", 
+" Water Splash 💦💦💦💦", 
+"""❄️❄️❄️❄️❄️❄️❄️❄️❄️
+    ❄️Frost Power❄️
+ ❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️""",
+"Spurting Water 💦", 
+"Spurting Water 💦",
+"Spurting Water 💦",
+" 🧊🧊🧊Ice Spikes🧊🧊🧊", 
+" 🧊🧊🧊Ice Spikes🧊🧊🧊", 
+"💧Water💧slices💧", 
+"❄️Ice💧Water Combo", 
+
+
+
 FIRE_GAME_TEMPLATES = (
     """{user1} uses {fire} against {user2} 
     
