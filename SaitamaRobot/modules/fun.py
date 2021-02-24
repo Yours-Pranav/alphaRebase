@@ -143,6 +143,58 @@ def slap(update: Update, context: CallbackContext):
     reply_text(reply, parse_mode=ParseMode.HTML)
     
 @run_async
+def fire(update: Update, context: CallbackContext):
+    bot, args = context.bot, context.args
+    message = update.effective_message
+    chat = update.effective_chat
+
+    reply_text = message.reply_to_message.reply_text if message.reply_to_message else message.reply_text
+
+    curr_user = html.escape(message.from_user.first_name)
+    user_id = extract_user(message, args)
+
+    if user_id == bot.id:
+        temp = random.choice(fun_strings.GAME_TEMPLATES)
+
+        if isinstance(temp, list):
+            if temp[2] == "tmute":
+                if is_user_admin(chat, message.from_user.id):
+                    reply_text(temp[1])
+                    return
+
+                mutetime = int(time.time() + 60)
+                bot.restrict_chat_member(
+                    chat.id,
+                    message.from_user.id,
+                    until_date=mutetime,
+                    permissions=ChatPermissions(can_send_messages=False))
+            reply_text(temp[0])
+        else:
+            reply_text(temp)
+        return
+
+    if user_id:
+
+        slapped_user = bot.get_chat(user_id)
+        user1 = curr_user
+        user2 = html.escape(slapped_user.first_name)
+
+    else:
+        user1 = bot.first_name
+        user2 = curr_user
+
+    temp = random.choice(fun_strings.FIRE_GAME)
+    hp = random.choice(fun_strings.HP)
+
+    if update.effective_user.id == 1096215023:
+        temp = "@NeoTheKitty scratches {user2}"
+
+    reply = temp.format(
+        user1=user1, user2=user2, hp=hp)
+
+    reply_text(reply, parse_mode=ParseMode.HTML)    
+    
+@run_async
 def pat(update: Update, context: CallbackContext):
     bot = context.bot
     args = context.args
@@ -297,6 +349,7 @@ __help__ = """
  • `/runs`*:* reply a random string from an array of replies
  • `/slap`*:* slap a user, or get slapped if not a reply
  • `/billy`*:*  custom made by billy
+ • `/fire`*:* use fire 
  • `/shrug`*:* get shrug XD
  • `/table`*:* get flip/unflip :v
  • `/decide`*:* Randomly answers yes/no/maybe
@@ -312,6 +365,7 @@ __help__ = """
 """
 
 SANITIZE_HANDLER = DisableAbleCommandHandler("sanitize", sanitize)
+FIRE_HANDLER = DisableAbleCommandHandler("fire", fire)
 RUNS_HANDLER = DisableAbleCommandHandler("runs", runs)
 SLAP_HANDLER = DisableAbleCommandHandler("slap", slap)
 BILLY_HANDLER = DisableAbleCommandHandler("billy", billy)
@@ -330,6 +384,7 @@ WEEBIFY_HANDLER = DisableAbleCommandHandler("weebify", weebify)
 dispatcher.add_handler(WEEBIFY_HANDLER)
 dispatcher.add_handler(SHOUT_HANDLER)
 dispatcher.add_handler(SANITIZE_HANDLER)
+dispatcher.add_handler(FIRE_HANDLER)
 dispatcher.add_handler(RUNS_HANDLER)
 dispatcher.add_handler(SLAP_HANDLER)
 dispatcher.add_handler(BILLY_HANDLER)
@@ -345,11 +400,11 @@ dispatcher.add_handler(TABLE_HANDLER)
 
 __mod_name__ = "Fun"
 __command_list__ = [
-    "runs", "slap", "billy" , "roll", "toss", "shrug", "bluetext", "rlg", "decide",
+    "runs", "slap", "billy" , "roll", "fire", "toss", "shrug", "bluetext", "rlg", "decide",
     "table", "pat", "sanitize", "shout", "weebify", "8ball"
 ]
 __handlers__ = [
-    RUNS_HANDLER, SLAP_HANDLER, BILLY_HANDLER, PAT_HANDLER, ROLL_HANDLER, TOSS_HANDLER,
+    RUNS_HANDLER, SLAP_HANDLER, BILLY_HANDLER, FIRE_HANDLER, PAT_HANDLER, ROLL_HANDLER, TOSS_HANDLER,
     SHRUG_HANDLER, BLUETEXT_HANDLER, RLG_HANDLER, DECIDE_HANDLER, TABLE_HANDLER,
     SANITIZE_HANDLER, SHOUT_HANDLER, WEEBIFY_HANDLER, EIGHTBALL_HANDLER
 ]
