@@ -64,39 +64,39 @@ BILLY_TEMPLATES = (
 )
 
 HP = (
-    "You missed
-     - 0 hp 
+    "You missed\
+     - 0 hp\ 
     ❤️ ██████████"
     
-    "CRITICAL -10 hp
+    "CRITICAL -10 hp\
     ❤️ ▒▒▒▒▒▒▒▒▒▒
        .K.O. "
     
-    " -1 hp 
+    " -1 hp\
     ❤️ █████████▒"
     
-    " -2 hp
+    " -2 hp\
     ❤️ ████████▒▒"
     
-    " -3 hp
+    " -3 hp\
     ❤️ ███████▒▒▒"
     
-    " -4 hp
+    " -4 hp\
     ❤️ ██████▒▒▒▒"
     
-    " - 5 hp
+    " - 5 hp\
     ❤️ █████▒▒▒▒▒"
     
-    " -6 hp
+    " -6 hp\
     ❤️ ████▒▒▒▒▒▒"
     
-    " -7 hp 
+    " -7 hp\ 
     ❤️ ███▒▒▒▒▒▒▒"
     
-    " -8 hp
+    " -8 hp\
     ❤️ ██▒▒▒▒▒▒▒▒"
     
-    " -9 hp 
+    " -9 hp\ 
     ❤️ █▒▒▒▒▒▒▒▒▒"
     
 )
@@ -124,17 +124,17 @@ FIRE = (
     "Multi fire punch🔥🔥🔥🔥🔥
     "Multi fire punch🔥🔥🔥🔥🔥
     
-    "🔥🔥🔥🔥Wall of Fires
+    "🔥🔥🔥🔥Wall of Fires\
     🔥🔥🔥🔥🔥
     "
-    "🔥🔥🔥🔥Wall of Fires
+    "🔥🔥🔥🔥Wall of Fires\
     🔥🔥🔥🔥🔥
     "
-    "🔥🔥🔥🔥Wall of Fires
+    "🔥🔥🔥🔥Wall of Fires\
     🔥🔥🔥🔥🔥
     "
     "lightning strikes ⚡⚡⚡"
-    "💥💥💥💥💥💥💥
+    "💥💥💥💥💥💥💥\
     💥💥Combustion💥💥
     💥💥💥💥💥💥💥"
 
