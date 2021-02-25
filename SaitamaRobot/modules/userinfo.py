@@ -400,8 +400,7 @@ def set_about_me(update: Update, context: CallbackContext):
 
 @run_async
 @sudo_plus
-def stats(update: Update, context: CallbackContext):
-   if chat.type == "private":
+def checkstats(update: Update, context: CallbackContext):
     process = subprocess.Popen(
         "neofetch --stdout", shell=True, text=True, stdout=subprocess.PIPE)
     output = process.communicate()[0]
