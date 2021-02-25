@@ -54,6 +54,14 @@ PM_START_TEXT = """
 Hi {}, my name is {}! 
 I am a smol but smart Group Management Bot, add me to your group and make it 👑
 You can find my list of available commands with /help.
+
+and some specially made command for fun by billy
+/billy
+/meow
+/fire
+/water
+/earth
+/heal
 """
 
 HELP_STRINGS = """
