@@ -60,6 +60,8 @@ BILLY_TEMPLATES = (
     " 比例王出现， 全部低头！.",
     "{user2} surrender now or ill call king billy",
     "{user1} go to groundpound {user2} mom and user 2 fucked up." , 
+    "{user1} go suck {user2}and be his/her slave." , 
+    "{user2} should be grateful that {user1} decided to spare you " , 
     
 )
 
@@ -77,7 +79,9 @@ LEWD = (
      " Snuck into Bra", 
      " rub rub boobies", 
      " Hug", 
-     " kiss", 
+     " kiss",
+     " watch popcorn",
+     " get bonked",
 ) 
 
 METER = (
@@ -116,8 +120,12 @@ MEOW_TEMPLATES = (
 
 HP = (
     """You missed
-     - 0 hp\ 
+     - 0 hp 
 ❤️ ██████████""" ,
+    """You missed
+     - 0 hp 
+❤️ ██████████
+    you got attack back instead""" ,
     
     """CRITICAL -10 hp
 ❤️ ▒▒▒▒▒▒▒▒▒▒
@@ -125,6 +133,9 @@ HP = (
     
     """ -1 hp
 ❤️ █████████▒""" ,
+     """ -1 hp
+❤️ █████████▒
+    weakling """ ,
     
     """ -2 hp
 ❤️ ████████▒▒""" ,
@@ -150,6 +161,89 @@ HP = (
     """ -9 hp 
  ❤️ █▒▒▒▒▒▒▒▒▒""" ,
     
+)
+
+HEALHP = (
+    """
+     + 10 hp 
+💚 ██████████""" ,
+    """
+    +10 hp
+💚 ██████████
+    you got back to full hp , now strike back""" ,
+    
+    """ +0 hp
+💚 ▒▒▒▒▒▒▒▒▒▒
+       ops , try again """ ,
+    
+    """ +9 hp
+💚 █████████▒""" ,
+     """ +9 hp
+💚 █████████▒
+    good effect """ ,
+    
+    """ +8 hp
+💚 ████████▒▒""" ,
+    
+    """ +7 hp
+💚 ███████▒▒▒""" ,
+    
+    """ +6 hp
+💚 ██████▒▒▒▒""" ,
+    
+    """ +5 hp
+💚 █████▒▒▒▒▒""" ,
+    
+    """ +4 hp
+💚 ████▒▒▒▒▒▒""" ,
+    
+    """ +3 hp
+💚 ███▒▒▒▒▒▒▒""" ,
+    
+    """ +2 hp
+💚 ██▒▒▒▒▒▒▒▒""" ,
+    
+    """ +1 hp 
+ 💚 █▒▒▒▒▒▒▒▒▒""" ,
+    
+    """ +1 hp 
+ 💚 █▒▒▒▒▒▒▒▒▒
+     weak effect """ ,
+)
+
+HEAL = (
+    "🍅🍅", 
+    "🍒🍒",
+    "🍎🍎",
+    "🍌🍌",
+    "🥥🥥",
+    "🍇🍇",
+    "🍤🍤.",
+    "🍩🍩",
+    "🍼🍼",
+    "🍆🍆",
+    "🍬🍬",
+    "🍰🍰",
+    "🍷🍷",
+    "💩💩",
+    "💦💦",
+    
+)
+
+HEAL_TEMPLATES = ( 
+ """{user1} had some {heal} and heal back
+ 
+   {healhp}""",   
+     """{user1} take rest under a tree and have some {heal} to heal back !
+ 
+   {healhp}""",   
+     """{user1} consume {heal} and heal back
+ 
+   {healhp}""",  
+     """{user1} *munch *munch *munch {heal} and heal back
+ 
+   {healhp}""",   
+ 
 )
 
 FIRE = ( 
@@ -190,6 +284,86 @@ FIRE = (
     💥💥💥💥💥💥💥""" ,
 )
 
+EARTH = (
+    " ⛰⛰ Earth ⛰⛰",
+    " ⛰⛰ Earth ⛰⛰",
+    " ⛰⛰ Earth ⛰⛰",
+    "⛰Earth ⛰ spikes⛰ attack ⛰",
+     "⛰Earth ⛰ spikes⛰ attack ⛰",
+    """"⛰⛰⛰⛰
+    ⛰⛰⛰⛰⛰⛰⛰
+    ⛰⛰⛰⛰⛰⛰⛰⛰
+    ⛰⛰⛰mountain of earth⛰⛰⛰
+    ⛰⛰⛰⛰⛰⛰⛰⛰⛰⛰⛰⛰⛰⛰⛰⛰⛰""",
+    "👣sense",
+    "Rock🗿",
+    "Big Rock🗿🗿🗿",
+    "🗿🗿🗿🗿Mega 🗿🗿🗿Rock🗿🗿🗿🗿🗿",
+    """🗿🗿🗿🗿🗿🗿🗿🗿
+    🗿🗿🗿🗿Boulder
+    🗿
+    🗿
+    🗿
+    🗿🗿""",
+     "Rock🗿",
+    "Big Rock🗿🗿🗿",
+    "🗿🗿🗿🗿Mega 🗿🗿🗿Rock🗿🗿🗿🗿🗿",
+    """🗿🗿🗿🗿🗿🗿🗿🗿
+    🗿🗿🗿🗿Boulder
+    🗿
+    🗿
+    🗿
+    🗿🗿""",
+    "⛓metal",
+    """
+    ⛓⛓             ⛓⛓
+    ⛓⛓ Metal chain ⛓⛓
+    ⛓⛓             ⛓⛓
+    ⛓⛓             
+    ⛓⛓             
+    """,
+    """Earth fall ⛰   ⛰   ⛰   ⛰
+    ⛰  ⛰  ⛰  ⛰  ⛰
+  ⛰  ⛰  ⛰  ⛰  ⛰""",
+)
+    
+EARTH_GAME_TEMPLATES = (
+    """{user1} use {earth} on {user2}
+    
+    {hp}""",
+    
+     """{user1} mastered {earth} and use it massively on {user2}
+    
+    {hp}""",
+    
+     """{user1} tighthen his/her pant , focus on {earth} and unleash all onto {user2}, run or die
+    
+    {hp}""",
+    
+     """{user2} got hit by {earth} used by {user1}
+    
+    {hp}""",
+    
+     """{user1} bombarded {earth} on {user2}
+    
+    {hp}""",
+    
+     """{user1} is very OP and uses {earth} on {user2} so {user2} cried for help
+    
+    {hp}""",
+    
+     """so , ummm {user1} start blasting {earth} on {user2} *yandere looking
+    
+    {hp}""",
+    
+     """{user1} summon {earth} on {user2} , BOOM 
+    
+    {hp}""",
+    
+     """{user1} use {earth} on {user2}
+    
+    {hp}""",
+)
 WATER = (
 """🌊🌊🌊🌊🌊
    🌊🌊🌊🌊🌊
@@ -197,6 +371,13 @@ WATER = (
                     🌊🌊🌊🌊🌊
                     🌊🌊🌊🌊🌊
                     🌊🌊🌊🌊🌊""", 
+    """🌊🌊🌊🌊🌊
+   🌊🌊🌊🌊🌊
+   🌊🌊🌊🌊🌊 Tsunami
+                    🌊🌊🌊🌊🌊
+                    🌊🌊🌊🌊🌊
+                    🌊🌊🌊🌊🌊""", 
+
 "💦 water blitz", 
 "💦 water blitz", 
 "💦 water blitz", 
@@ -223,7 +404,6 @@ WATER = (
 " 🧊🧊🧊Ice Spikes🧊🧊🧊", 
 "💧Water💧slices💧", 
 "❄️Ice💧Water Combo", 
-" Summoning Rain 🌧🌧 🌧🌧", 
 " Summoning Rain 🌧🌧 🌧🌧", 
 " Summoning Rain 🌧🌧 🌧🌧", 
 """🐳 🐳🐳 Ocean attack 🐳
