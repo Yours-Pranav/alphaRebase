@@ -407,7 +407,7 @@ def stats(update: Update, context: CallbackContext):
     stats = "<b>Current stats:</b>\n" + "\n" + output + "\n".join(
         [mod.__stats__() for mod in STATS])
     result = re.sub(r'(\d+)', r'<code>\1</code>', stats)
-    update.effective_message.reply_text(result, parse_mode=ParseMode.HTML)
+    update.effective_message.send_message(result, parse_mode=ParseMode.HTML)
 
 
 @run_async
