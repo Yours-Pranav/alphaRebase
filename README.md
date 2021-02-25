@@ -1,15 +1,12 @@
-![Romeo](https://telegra.ph/file/929a3cffe8935f0a445e6.jpg)
+![Billy](https://telegra.ph/file/cfe1fd3cf1aac68343fa4.jpg)
 
-# Romeo
+# Billy
 
-[![Updates channel!](https://img.shields.io/badge/Join%20Channel-!-red)](https://telegram.me/Romeo1Bot_Support)
 
 
 A modular Telegram Python bot running on python3 with a sqlalchemy database and an entirely themed persona to make Saitama suitable for Anime and Manga group chats. 
 
-Can be found on telegram as [Romeo](https://telegram.me/Romeo1Bot).
-
-The Support group can be reached out to at [Romeo Bot Support](https://telegram.me/Romeo1Bot_Support), where you can ask for help about [Romeo](https://telegram.me/Romeo1Bot), discover/request new features, report bugs, and stay in the loop whenever a new update is available. 
+Can be found on telegram as [BillyGuardian](https://telegram.me/Billyguardianbot).
 
 ## How to setup/deploy.
 
@@ -56,8 +53,8 @@ An example `config.py` file could be:
 from SaitamaRobot.sample_config import Config
 
 class Development(Config):
-    OWNER_ID = 1078841825  # your telegram ID
-    OWNER_USERNAME = "Warning_MadBoy_is_Here"  # your telegram username
+    OWNER_ID = 163494588. # your telegram ID
+    OWNER_USERNAME = "Wancoins"  # your telegram username
     API_KEY = "your bot api key"  # your api key, as provided by the @botfather
     SQLALCHEMY_DATABASE_URI = 'postgresql://username:password@localhost:5432/database'  # sample db credentials
     JOIN_LOGGER = '-1234567890' # some group chat that your bot is a member of
@@ -74,18 +71,16 @@ So just go and read the config sample file.
 ## How to setup on Heroku 
 For starters click on this button 
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/madboy482/Romeo.git) 
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/billybot482/billyguardianbot.git) 
 
 
 ## Credits
 The bot is based on the original work done by <b>[PaulSonOfLars](https://github.com/PaulSonOfLars)</b>
 All original credits go to Paul and his dedication, Without his efforts, this fork would not have been possible!
 
-<b>Fork Developer --></b> <b><i>[MADBOY](https://github.com/madboy482)</i></b>
-or <b><i>[MADBOY](https://telegram.me/Warning_MadBoy_is_Here)</i></b>
 
 Also, missing proper credit for blacklistusers taken from TheRealPhoenixBot (will add it later, this note says unless it is done)
 
 Any other authorship/credits can be seen through the commits.
 
-Should any be missing kindly let us know at [Romeo Bot Support](https://telegram.me/Romeo1Bot_Support) or simply submit a pull request on the readme.
+Should any be missing kindly let me know at @wancoins my telegram USERNAME
