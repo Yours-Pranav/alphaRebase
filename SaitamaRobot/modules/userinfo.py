@@ -522,7 +522,7 @@ Examples:
 SET_BIO_HANDLER = DisableAbleCommandHandler("setbio", set_about_bio)
 GET_BIO_HANDLER = DisableAbleCommandHandler("bio", about_bio)
 
-STATS_HANDLER = CommandHandler("stats", stats)
+CHECKSTATS_HANDLER = CommandHandler("checkstats", checkstats)
 ID_HANDLER = DisableAbleCommandHandler("id", get_id)
 GIFID_HANDLER = DisableAbleCommandHandler("gifid", gifid)
 INFO_HANDLER = DisableAbleCommandHandler(("info", "book"), info)
@@ -530,7 +530,7 @@ INFO_HANDLER = DisableAbleCommandHandler(("info", "book"), info)
 SET_ABOUT_HANDLER = DisableAbleCommandHandler("setme", set_about_me)
 GET_ABOUT_HANDLER = DisableAbleCommandHandler("me", about_me)
 
-dispatcher.add_handler(STATS_HANDLER)
+dispatcher.add_handler(CHECKSTATS_HANDLER)
 dispatcher.add_handler(ID_HANDLER)
 dispatcher.add_handler(GIFID_HANDLER)
 dispatcher.add_handler(INFO_HANDLER)
@@ -543,5 +543,5 @@ __mod_name__ = "Info"
 __command_list__ = ["setbio", "bio", "setme", "me", "info"]
 __handlers__ = [
     ID_HANDLER, GIFID_HANDLER, INFO_HANDLER, SET_BIO_HANDLER, GET_BIO_HANDLER,
-    SET_ABOUT_HANDLER, GET_ABOUT_HANDLER, STATS_HANDLER
+    SET_ABOUT_HANDLER, GET_ABOUT_HANDLER, CHECKSTATS_HANDLER
 ]
