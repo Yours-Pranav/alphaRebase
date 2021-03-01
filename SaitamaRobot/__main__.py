@@ -83,7 +83,7 @@ And the following:
     dispatcher.bot.first_name, ""
     if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
 
-BILLYGUARDIAN_IMG = "https://telegra.ph/file/cfe1fd3cf1aac68343fa4.jpg"
+BILLYGUARDIAN_IMG = "https://telegra.ph/file/4208b97535d77936d8e7f.jpg"
 
 IMPORTED = {}
 MIGRATEABLE = []
