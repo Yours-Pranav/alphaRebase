@@ -55,9 +55,9 @@ animation_chars = [
             "☀️\n☝️\nEscanor: I'm.... the one who decides those things!",
             "☀️\n☝️\nEscanor: BEGONE!!!!",
    ]
-for i in animation_chars:
-  msg.edit_text(i)
-  sleep(2.5)
+     for i in animation_chars:
+       msg.edit_text(i)
+       sleep(2.5)
 
 help = """
 - /police : 🚔
