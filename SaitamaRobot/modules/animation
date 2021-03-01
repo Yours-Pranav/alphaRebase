@@ -3,7 +3,7 @@ import asyncio
 @app.on_message(filters.command('sample'))
 async def shitty_handler(client, message):
     msg = await client.send_message(chat_id=message.chat.id, text="Initial message")
-    text_list = [
+    text_list =[
                 "Estarossa vs Escanor - Emoji Animation",
                 "🟡\n☝️",
                 "🖐🏻\nEstarossa:..",
