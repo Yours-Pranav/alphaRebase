@@ -37,7 +37,7 @@ def police(bot: Bot, update: Update,):
 help = """
 - /police : 🚔
 """
-
+'''
 def sample(client, message):
     msg = await client.send_message(chat_id=message.chat.id, text="Initial message")
     text_list = [
@@ -63,7 +63,7 @@ def sample(client, message):
     for text in text_list:
       await msg.edit_text(text)
       await asyncio.sleep(2.5)      
-
+'''
 POLICE_HANDLER = DisableAbleCommandHandler("police", police)
 SAMPLE_HANDLER = DisableAbleCommandHandler("sample", sample)
 
