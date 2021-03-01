@@ -32,32 +32,7 @@ def police(bot: Bot, update: Update,):
         time.sleep(EDIT_SLEEP)
     msg.edit_text('Police is here!')
 
-def test(bot: Bot, update: Update,):
-    msg = bot.send_message(chat_id=effective_chat.id, text='Here goes')
-from time import sleep
-animation_chars = [
-            "Estarossa vs Escanor - Emoji Animation",
-            "🟡\n☝️",
-            "🖐🏻\nEstarossa:..",
-            "🖐🏻◾️◼️\nEstarossa: .....",
-            "🖐🏻◾️◼️⬛️\nEstarossa: ...BLACKOUT",
-            "🟡\n☝️\nEscanor: hm?",
-            "⚫️\n☝️\n*Escanor's sun becomes dark*",
-            "🖐🏻⬛️\nEstarossa: My darkness swallowed your sun",
-            "⚫️\n☝️\nEscanor: You say my attacks are ineffective?",
-            "⚫️\n☝️\nEscanor: Who decided that?",
-            "((⚫️))\n  ☝️\nEscanor:",
-            "((🌕))\n  ☝️\nEscanor: *closes eyes*",
-            "🟡\n☝️\nEscanor: You said you swallowed my sun?",
-            "🌕\n☝️\nEscanor: Who decided that?",
-            "🌕\n☝️\nEscanor:",
-            "🌕\n☝️\nEscanor: Cruel sun!",
-            "☀️\n☝️\nEscanor: I'm.... the one who decides those things!",
-            "☀️\n☝️\nEscanor: BEGONE!!!!",
-   ]
-     for i in animation_chars:
-       msg.edit_text(i)
-       sleep(2.5)
+
 
 help = """
 - /police : 🚔
