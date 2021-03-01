@@ -25,14 +25,14 @@ police_siren = [
 
 @user_admin
 @run_async
-def police(bot: Bot, update: Update, context: CallbackContext):
+def police(bot: Bot, update: Update,):
     msg = update.effective_message.reply_text('Police is coming!') 
     for x in range(EDIT_TIMES):
         msg.edit_text(police_siren[x%2])
         time.sleep(EDIT_SLEEP)
     msg.edit_text('Police is here!')
 
-def test(bot: Bot, update: Update, context: CallbackContext):
+def test(bot: Bot, update: Update,):
     msg = bot.send_message(chat_id=effective_chat.id, text='Here goes')
 from time import sleep
 animation_chars = [
