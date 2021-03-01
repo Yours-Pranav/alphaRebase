@@ -37,40 +37,14 @@ def police(bot: Bot, update: Update,):
 help = """
 - /police : 🚔
 """
-'''
-def sample(client, message):
-    msg = await client.send_message(chat_id=message.chat.id, text="Initial message")
-    text_list = [
-                "Estarossa vs Escanor - Emoji Animation",
-                "🟡\n☝️",
-                "🖐🏻\nEstarossa:..",
-                "🖐🏻◾️◼️\nEstarossa: .....",
-                "🖐🏻◾️◼️⬛️\nEstarossa: ...BLACKOUT",
-                "🟡\n☝️\nEscanor: hm?",
-                "⚫️\n☝️\n*Escanor's sun becomes dark*",
-                "🖐🏻⬛️\nEstarossa: My darkness swallowed your sun",
-                "⚫️\n☝️\nEscanor: You say my attacks are ineffective?",
-                "⚫️\n☝️\nEscanor: Who decided that?",
-                "((⚫️))\n  ☝️\nEscanor:",
-                "((🌕))\n  ☝️\nEscanor: *closes eyes*",
-                "🟡\n☝️\nEscanor: You said you swallowed my sun?",
-                "🌕\n☝️\nEscanor: Who decided that?",
-                "🌕\n☝️\nEscanor:",
-                "🌕\n☝️\nEscanor: Cruel sun!",
-                "☀️\n☝️\nEscanor: I'm.... the one who decides those things!",
-                "☀️\n☝️\nEscanor: BEGONE!!!!",
-       ]
-    for text in text_list:
-      await msg.edit_text(text)
-      await asyncio.sleep(2.5)      
-'''
+
 POLICE_HANDLER = DisableAbleCommandHandler("police", police)
-SAMPLE_HANDLER = DisableAbleCommandHandler("sample", sample)
+
 
 dispatcher.add_handler(POLICE_HANDLER)
-dispatcher.add_handler(POLICE_HANDLER)
+
 
 mod_name = "POLICE"
-command_list = ["police" , "sample"]
+command_list = ["police"]
 
-__handlers__ = [POLICE_HANDLER, SAMPLE_HANDLER]
+__handlers__ = [POLICE_HANDLER]
