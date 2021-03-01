@@ -1,6 +1,7 @@
 import html
 import random
 import time
+import asyncio
 
 import SaitamaRobot.modules.fun_strings as fun_strings
 from SaitamaRobot import dispatcher
@@ -86,7 +87,79 @@ def billy(update: Update, context: CallbackContext):
         user1=user1, user2=user2,)
 
     reply_text(reply, parse_mode=ParseMode.HTML)
+    
+@run_async
+def sample(update: Update, context: CallbackContext):
+    bot, args = context.bot, context.args
+    message = update.effective_message
+    chat = update.effective_chat
 
+    reply_text = message.reply_to_message.reply_text if message.reply_to_message else message.reply_text
+
+    curr_user = html.escape(message.from_user.first_name)
+    user_id = extract_user(message, args)
+
+    if user_id == bot.id:
+        temp = random.choice(fun_strings.SLAP_SAITAMA_TEMPLATES)
+
+        if isinstance(temp, list):
+            if temp[2] == "tmute":
+                if is_user_admin(chat, message.from_user.id):
+                    reply_text(temp[1])
+                    return
+
+                mutetime = int(time.time() + 60)
+                bot.restrict_chat_member(
+                    chat.id,
+                    message.from_user.id,
+                    until_date=mutetime,
+                    permissions=ChatPermissions(can_send_messages=False))
+            reply_text(temp[0])
+        else:
+            reply_text(temp)
+        return
+
+    if user_id:
+
+        slapped_user = bot.get_chat(user_id)
+        user1 = curr_user
+        user2 = html.escape(slapped_user.first_name)
+
+    else:
+        user1 = bot.first_name
+        user2 = curr_user
+
+   text_list = [
+                "Estarossa vs Escanor - Emoji Animation",
+                "🟡\n☝️",
+                "🖐🏻\nEstarossa:..",
+                "🖐🏻◾️◼️\nEstarossa: .....",
+                "🖐🏻◾️◼️⬛️\nEstarossa: ...BLACKOUT",
+                "🟡\n☝️\nEscanor: hm?",
+                "⚫️\n☝️\n*Escanor's sun becomes dark*",
+                "🖐🏻⬛️\nEstarossa: My darkness swallowed your sun",
+                "⚫️\n☝️\nEscanor: You say my attacks are ineffective?",
+                "⚫️\n☝️\nEscanor: Who decided that?",
+                "((⚫️))\n  ☝️\nEscanor:",
+                "((🌕))\n  ☝️\nEscanor: *closes eyes*",
+                "🟡\n☝️\nEscanor: You said you swallowed my sun?",
+                "🌕\n☝️\nEscanor: Who decided that?",
+                "🌕\n☝️\nEscanor:",
+                "🌕\n☝️\nEscanor: Cruel sun!",
+                "☀️\n☝️\nEscanor: I'm.... the one who decides those things!",
+                "☀️\n☝️\nEscanor: BEGONE!!!!",
+       ]
+     for text in text_list:
+     await msg.edit_text(text)
+     await asyncio.sleep(0.5)
+
+    if update.effective_user.id == 163494588:
+        temp = "{user1} is already the king"
+
+    reply = temp.format(
+        user1=user1, user2=user2,)
+
+    reply_text(reply, parse_mode=ParseMode.HTML)
     
 @run_async
 def slap(update: Update, context: CallbackContext):
