@@ -25,3 +25,9 @@ async def shitty_handler(client, message):
     for text in text_list:
       await msg.edit_text(text)
       await asyncio.sleep(0.5)
+
+dispatcher.add_handler(SHITTY_HANDLER)
+
+__handlers__ = [
+    RUNS_HANDLER,
+    ]
