@@ -29,5 +29,5 @@ async def shitty_handler(client, message):
 dispatcher.add_handler(SHITTY_HANDLER)
 
 __handlers__ = [
-    RUNS_HANDLER,
+    SHITTY_HANDLER,
     ]
