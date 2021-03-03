@@ -59,9 +59,17 @@ BILLY_TEMPLATES = (
     "死.",
     " 比例王出现， 全部低头！.",
     "{user2} surrender now or ill call king billy",
-    "{user1} go to groundpound {user2} mom and user 2 fucked up." , 
-    "{user1} go suck {user2}and be his/her slave." , 
+    "{user1} go to groundpound {user2} mom and {user2} fucked up." , 
+    "{user2} go suck {user1}and be his/her slave." , 
     "{user2} should be grateful that {user1} decided to spare you " , 
+    "{user1} try to kill {user2} , pray to God billy before its too late " ,
+    "{user2} should start running now because {user1} holding AK-47 aiming at {user2} " ,
+    "{user2} 还想活的话，叫Billy王出来不然 {user1} 将要让你的生命结束 " ,
+    "{user1} 利用所有Billy的能力，炸死 {user2}" ,
+    "{user1} 变身为Billy, 出招对付{user2}" ,
+    "{user1} 生气了， {user2} 连萝莉也救不了你了 " ,
+    "{user2} 被 {user1} 的Billy 光波射死了" ,
+    "{user1} 使用 Billy 之呼吸， BOOM {user2} ,
     
 )
 
