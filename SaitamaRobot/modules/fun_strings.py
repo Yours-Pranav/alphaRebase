@@ -69,7 +69,7 @@ BILLY_TEMPLATES = (
     "{user1} 变身为Billy, 出招对付{user2}" ,
     "{user1} 生气了， {user2} 连萝莉也救不了你了 " ,
     "{user2} 被 {user1} 的Billy 光波射死了" ,
-    "{user1} 使用 Billy 之呼吸， BOOM {user2} ,
+    "{user1} 使用 Billy 之呼吸， BOOM  {user2}" ,
     
 )
 
