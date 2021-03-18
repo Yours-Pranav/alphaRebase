@@ -52,17 +52,8 @@ def get_readable_time(seconds: int) -> str:
 
 PM_START_TEXT = """
 Hi {}, my name is {}! 
-I am a smol but smart Group Management Bot, add me to your group and make it 👑
-You can find my list of available commands with /help.
+This is BCB group management Bot
 
-and some specially made command for fun by billy
-/billy
-/meow
-/fire
-/water
-/earth
-/heal
-"""
 
 HELP_STRINGS = """
 Hey there! My name is *{}*.
@@ -83,7 +74,7 @@ And the following:
     dispatcher.bot.first_name, ""
     if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
 
-BILLYGUARDIAN_IMG = "https://telegra.ph/file/4208b97535d77936d8e7f.jpg"
+BCB_IMG = "https://telegra.ph/file/5361963f60fd1307ccd8b.jpg"
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -192,7 +183,7 @@ def start(update: Update, context: CallbackContext):
         else:
             first_name = update.effective_user.first_name
             update.effective_message.reply_photo(
-                BILLYGUARDIAN_IMG,
+                BCB_IMG,
                 PM_START_TEXT.format(
                     escape_markdown(first_name),
                     escape_markdown(context.bot.first_name)),
@@ -201,17 +192,17 @@ def start(update: Update, context: CallbackContext):
                 reply_markup=InlineKeyboardMarkup(
                     [[
                         InlineKeyboardButton(
-                            text="☑️ Add BillyGuardian to your group",
+                            text="☑️ Add this bot to your group",
                             url="t.me/{}?startgroup=true".format(
                                 context.bot.username))
                     ],
                      [
                          InlineKeyboardButton(
                              text="🚑 Support Channel",
-                             url=f"https://t.me/billyguardian"),
+                             url=f"https://t.me/BitcoinBlackNews"),
                          InlineKeyboardButton(
                              text="Support Chat 🚑",
-                             url="https://t.me/billyguardian")
+                             url="https://t.me/BitCoinBlack_English")
                      ],
                      [
                          InlineKeyboardButton(
