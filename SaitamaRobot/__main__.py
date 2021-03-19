@@ -219,6 +219,82 @@ def start(update: Update, context: CallbackContext):
             "Yuus, I'm Online!😉😉\n<b>Haven't slept since:👀</b> <code>{}</code>"
             .format(uptime),
             parse_mode=ParseMode.HTML)
+        
+@run_async
+def bcb(update: Update, context: CallbackContext):
+    args = context.args
+    uptime = get_readable_time((time.time() - StartTime))
+    if update.effective_chat.type == "private":
+        if len(args) >= 1:
+            if args[0].lower() == "help":
+                send_help(update.effective_chat.id, HELP_STRINGS)
+            elif args[0].lower().startswith("ghelp_"):
+                mod = args[0].lower().split('_', 1)[1]
+                if not HELPABLE.get(mod, False):
+                    return
+                send_help(
+                    update.effective_chat.id, HELPABLE[mod].__help__,
+                    InlineKeyboardMarkup([[
+                        InlineKeyboardButton(
+                            text="Back", callback_data="help_back")
+                    ]]))
+            elif args[0].lower() == "markdownhelp":
+                IMPORTED["extras"].markdown_help_sender(update)
+            elif args[0].lower() == "disasters":
+                IMPORTED["disasters"].send_disasters(update)
+            elif args[0].lower().startswith("stngs_"):
+                match = re.match("stngs_(.*)", args[0].lower())
+                chat = dispatcher.bot.getChat(match.group(1))
+
+                if is_user_admin(chat, update.effective_user.id):
+                    send_settings(
+                        match.group(1), update.effective_user.id, False)
+                else:
+                    send_settings(
+                        match.group(1), update.effective_user.id, True)
+
+            elif args[0][1:].isdigit() and "rules" in IMPORTED:
+                IMPORTED["rules"].send_rules(update, args[0], from_pm=True)
+
+        else:
+            first_name = update.effective_user.first_name
+            update.effective_message.reply_photo(
+                BCB_IMG,
+                PM_START_TEXT.format(
+                    escape_markdown(first_name),
+                    escape_markdown(context.bot.first_name)),
+                parse_mode=ParseMode.MARKDOWN,
+                disable_web_page_preview=True,
+                reply_markup=InlineKeyboardMarkup(
+                    [[
+                        InlineKeyboardButton(
+                            text="☑️ WhitePaper",
+                            url="t.me/{}?startgroup=true".format(
+                                context.bot.username))
+                    ],
+                     [
+                         InlineKeyboardButton(
+                             text=" twitter",
+                             url=f"https://t.me/BitcoinBlackNews"),
+                         InlineKeyboardButton(
+                             text=" facebook",
+                             url="https://t.me/BitCoinBlack_English")
+                     ],
+                     [
+                         InlineKeyboardButton(
+                             text="FAQ",
+                             url="https://t.me/wancoins")
+                     ],
+                     [
+                         InlineKeyboardButton(
+                             text=" wallet ",
+                             url="https://github.com/billybot482/billyguardianBot")
+                     ]]))
+    else:
+        update.effective_message.reply_text(
+            "Yuus, I'm Online!😉😉\n<b>Haven't slept since:👀</b> <code>{}</code>"
+            .format(uptime),
+            parse_mode=ParseMode.HTML)
 
 
 # for test purposes
@@ -512,6 +588,7 @@ def main():
 
     test_handler = CommandHandler("test", test)
     start_handler = CommandHandler("start", start)
+    bcb_handler = CommandHandler("bcb", bcb)
 
     help_handler = CommandHandler("help", get_help)
     help_callback_handler = CallbackQueryHandler(
@@ -526,6 +603,7 @@ def main():
 
     # dispatcher.add_handler(test_handler)
     dispatcher.add_handler(start_handler)
+    dispatcher.add_handler(bcb_handler)
     dispatcher.add_handler(help_handler)
     dispatcher.add_handler(settings_handler)
     dispatcher.add_handler(help_callback_handler)
