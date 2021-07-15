@@ -39,7 +39,7 @@ def sanitize(update: Update, context: CallbackContext):
     
 @run_async
 def giftest(update: Update, context : CallbackContext):
-    context.bot.sendDocument(chat_id=chat_id, document=https://tenor.com/6U3c.gif)
+    context.bot.sendDocument(chat_id=chat_id, document="https://tenor.com/6U3c.gif")
    
 
 @run_async
