@@ -42,11 +42,12 @@ def giftest(update: Update, context : CallbackContext):
    """context.bot.sendDocument(chat_id=update.effective_chat.id, document="https://tenor.com/6U3c.gif")
     print("test")
     update.effective_message.reply_text("test")"""
+
     context.bot.send_animation(
     chat_id=update.message.chat.id,
     animation='https://tenor.com/6U3c.gif',
-    caption='TEST'
-)
+    caption='TEST') 
+
    
 
 @run_async
