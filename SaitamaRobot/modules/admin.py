@@ -100,7 +100,7 @@ def promote(update: Update, context: CallbackContext) -> str:
 
     return log_message
 
-  def fullpromote(update: Update, context: CallbackContext) -> str:
+def fullpromote(update: Update, context: CallbackContext) -> str:
     bot = context.bot
     args = context.args
 
