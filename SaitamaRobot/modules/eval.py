@@ -70,7 +70,7 @@ def cleanup_code(code):
 
 def do(func, bot, update):
     log_input(update)
-    content = update.message.text
+    content = update.message.text.split('\n')[1:-1])
     body = cleanup_code(content)
     env = namespace_of(update.message.chat_id, update, bot)
 
