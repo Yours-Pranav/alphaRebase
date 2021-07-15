@@ -36,9 +36,8 @@ def sanitize(update: Update, context: CallbackContext):
     
 @run_async
 def giftest(update: Update, context : CallbackContext):
-    message = update.effective_message
-    reply_animation(file_id="CgACAgQAAxkBAAI352DwBkbU4hfmR7Qdabtyp--DLTzsAAILAgACcEjNUmiK1Cwcpza4HgQ") 
-    reply_text("Text sent") 
+    update.effective_message.reply_text(" test")
+   
 
 @run_async
 def sanitize(update: Update, context: CallbackContext):
