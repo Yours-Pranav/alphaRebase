@@ -18,6 +18,9 @@ THANOS = 'CgACAgQAAxkBAAI352DwBkbU4hfmR7Qdabtyp--DLTzsAAILAgACcEjNUmiK1Cwcpza4Hg
 @run_async
 def runs(update: Update, context: CallbackContext):
     update.effective_message.reply_text(random.choice(fun_strings.RUN_STRINGS))
+    
+def stones(update: Update, context: CallbackContext):
+    update.effective_message.reply_text("🟣 : Power Stone \n🔵 : Space Stone \n🔴 : Reality Stone \n🟠 : Soul Stone \n🟢 : Time Stone \n🟡 : Mind Stone ")
 
 @run_async
 def sanitize(update: Update, context: CallbackContext):
@@ -36,13 +39,7 @@ def sanitize(update: Update, context: CallbackContext):
     
 @run_async
 def giftest(update: Update, context : CallbackContext):
-    gif_link='https://tenor.com/6U3c.gif'
-    update.message.reply_animation(
-        animation=gif_link,
-        caption=main_menu_message(),
-        reply_markup=main_menu_keyboard(),
-        parse_mode=ParseMode.MARKDOWN
-    ) 
+    context.bot.sendDocument(chat_id=chat_id, document=https://tenor.com/6U3c.gif)
    
 
 @run_async
@@ -627,6 +624,8 @@ EIGHTBALL_HANDLER = DisableAbleCommandHandler("8ball", eightball)
 TABLE_HANDLER = DisableAbleCommandHandler("table", table)
 SHOUT_HANDLER = DisableAbleCommandHandler("shout", shout)
 WEEBIFY_HANDLER = DisableAbleCommandHandler("weebify", weebify)
+STONES_HANDLER = DisableAbleCommandHandler("stones", stones)
+
 
 dispatcher.add_handler(WEEBIFY_HANDLER)
 
@@ -650,14 +649,54 @@ dispatcher.add_handler(RLG_HANDLER)
 dispatcher.add_handler(DECIDE_HANDLER)
 dispatcher.add_handler(EIGHTBALL_HANDLER)
 dispatcher.add_handler(TABLE_HANDLER)
+dispatcher.add_handler(STONES_HANDLER)
 
 __mod_name__ = "Fun"
 __command_list__ = [
-    "runs", "slap", "billy" , "roll", "fire", "water", "meow", "toss", "shrug", "heal", "earth", "bluetext", "rlg", "decide",
-    "table", "pat", "sanitize", "giftest", "shout", "weebify", "8ball"
+    "runs", 
+    "slap", 
+    "billy" ,
+    "stones" ,
+    "roll", 
+    "fire",
+    "water",
+    "meow", 
+    "toss", 
+    "shrug",
+    "heal",
+    "earth",
+    "bluetext",
+    "rlg", 
+    "decide",
+    "table",
+    "pat",
+    "sanitize", 
+    "giftest", 
+    "shout",
+    "weebify",
+    "8ball"
 ]
 __handlers__ = [
-    RUNS_HANDLER, SLAP_HANDLER, BILLY_HANDLER, FIRE_HANDLER, WATER_HANDLER, MEOW_HANDLER, EARTH_HANDLER, HEAL_HANDLER , PAT_HANDLER, ROLL_HANDLER, TOSS_HANDLER,
-    SHRUG_HANDLER, BLUETEXT_HANDLER, RLG_HANDLER, DECIDE_HANDLER, TABLE_HANDLER,
-    SANITIZE_HANDLER, GIFTEST_HANDLER, SHOUT_HANDLER, WEEBIFY_HANDLER, EIGHTBALL_HANDLER
+    RUNS_HANDLER,
+    SLAP_HANDLER, 
+    BILLY_HANDLER, 
+    FIRE_HANDLER, 
+    WATER_HANDLER, 
+    MEOW_HANDLER, 
+    EARTH_HANDLER, 
+    HEAL_HANDLER , 
+    PAT_HANDLER, 
+    ROLL_HANDLER, 
+    TOSS_HANDLER,
+    SHRUG_HANDLER, 
+    BLUETEXT_HANDLER, 
+    RLG_HANDLER, 
+    DECIDE_HANDLER, 
+    TABLE_HANDLER,
+    SANITIZE_HANDLER, 
+    GIFTEST_HANDLER, 
+    SHOUT_HANDLER, 
+    WEEBIFY_HANDLER, 
+    EIGHTBALL_HANDLER, 
+    STONES_HANDLER
 ]
