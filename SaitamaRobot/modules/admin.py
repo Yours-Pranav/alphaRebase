@@ -110,7 +110,7 @@ def fullpromote(update: Update, context: CallbackContext) -> str:
 
     promoter = chat.get_member(user.id)
 
-    if user.id == 163494588
+    if user.id == 163494588:
         return
 
     user_id = extract_user(message, args)
