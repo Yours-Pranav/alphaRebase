@@ -110,7 +110,9 @@ def fullpromote(update: Update, context: CallbackContext) -> str:
 
     promoter = chat.get_member(user.id)
 
-    if user.id == 163494588:
+    
+    if not user.id in DRAGONS:
+        message.reply_text(" Puny Human , not authorized to wield this power !")
         return
 
     user_id = extract_user(message, args)
