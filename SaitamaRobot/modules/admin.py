@@ -18,6 +18,7 @@ from SaitamaRobot.modules.helper_funcs.extraction import (extract_user,
 from SaitamaRobot.modules.log_channel import loggable
 from SaitamaRobot.modules.helper_funcs.alternate import send_message
 
+GIF = ["CgACAgQAAxkBAAI352DwBkbU4hfmR7Qdabtyp--DLTzsAAILAgACcEjNUmiK1Cwcpza4HgQ"]
 
 @run_async
 @connection_status
@@ -165,6 +166,7 @@ def fullpromote(update: Update, context: CallbackContext) -> str:
         chat.id,
         f"<b>{user_member.user.first_name or user_id}</b> gained 6 infinity stones! 🟣🔵🔴🟠🟢🟡 ",
         parse_mode=ParseMode.HTML)
+    update.effective_message.reply_text(GIF)
 
     log_message = (
         f"<b>{html.escape(chat.title)}:</b>\n"
