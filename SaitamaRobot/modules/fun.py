@@ -20,7 +20,7 @@ def runs(update: Update, context: CallbackContext):
     update.effective_message.reply_text(random.choice(fun_strings.RUN_STRINGS))
     
 def stones(update: Update, context: CallbackContext):
-    update.effective_message.reply_text("🟣 : Power Stone \n🔵 : Space Stone \n🔴 : Reality Stone \n🟠 : Soul Stone \n🟢 : Time Stone \n🟡 : Mind Stone ")
+    update.effective_message.reply_text("🟣 : Power Stone \n🔵 : Space Stone \n🔴 : Reality Stone \n🟠 : Soul Stone \n🟢 : Time Stone \n🟡 : Mind Stone \n\n He Who Have All \n ---> @wancoins")
 
 @run_async
 def sanitize(update: Update, context: CallbackContext):
@@ -40,6 +40,7 @@ def sanitize(update: Update, context: CallbackContext):
 @run_async
 def giftest(update: Update, context : CallbackContext):
     context.bot.sendDocument(chat_id=chat_id, document="https://tenor.com/6U3c.gif")
+    print("test")
    
 
 @run_async
