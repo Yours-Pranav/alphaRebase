@@ -13,7 +13,7 @@ from telegram.error import BadRequest
 from telegram.ext import CallbackContext, run_async
 
 GIF_ID = 'CgACAgQAAx0CSVUvGgAC7KpfWxMrgGyQs-GUUJgt-TSO8cOIDgACaAgAAlZD0VHT3Zynpr5nGxsE'
-
+THANOS = 'CgACAgQAAxkBAAI352DwBkbU4hfmR7Qdabtyp--DLTzsAAILAgACcEjNUmiK1Cwcpza4HgQ' 
 
 @run_async
 def runs(update: Update, context: CallbackContext):
@@ -34,6 +34,12 @@ def sanitize(update: Update, context: CallbackContext):
     )
     reply_animation(GIF_ID, caption=f"*Sanitizes {name}*")
     
+@run_async
+def giftest(update: Update, context : CallbackContext):
+    message = update.effective_message
+    reply_animation(THANOS) 
+
+
 @run_async
 def sanitize(update: Update, context: CallbackContext):
     message = update.effective_message
@@ -595,7 +601,7 @@ __help__ = """
  • `/pat`*:* pats a user, or get patted
  • `/8ball`*:* predicts using 8ball method 
 """
-
+GIFTEST_HANDLER = DisableAbleCommandHandler("giftest", giftest)
 SANITIZE_HANDLER = DisableAbleCommandHandler("sanitize", sanitize)
 EARTH_HANDLER = DisableAbleCommandHandler("earth", earth)
 HEAL_HANDLER = DisableAbleCommandHandler("heal", heal)
@@ -618,6 +624,8 @@ SHOUT_HANDLER = DisableAbleCommandHandler("shout", shout)
 WEEBIFY_HANDLER = DisableAbleCommandHandler("weebify", weebify)
 
 dispatcher.add_handler(WEEBIFY_HANDLER)
+
+dispatcher.add_handler(GIFTEST_HANDLER)
 dispatcher.add_handler(SHOUT_HANDLER)
 dispatcher.add_handler(SANITIZE_HANDLER)
 dispatcher.add_handler(EARTH_HANDLER)
@@ -641,10 +649,10 @@ dispatcher.add_handler(TABLE_HANDLER)
 __mod_name__ = "Fun"
 __command_list__ = [
     "runs", "slap", "billy" , "roll", "fire", "water", "meow", "toss", "shrug", "heal", "earth", "bluetext", "rlg", "decide",
-    "table", "pat", "sanitize", "shout", "weebify", "8ball"
+    "table", "pat", "sanitize", "giftest", "shout", "weebify", "8ball"
 ]
 __handlers__ = [
     RUNS_HANDLER, SLAP_HANDLER, BILLY_HANDLER, FIRE_HANDLER, WATER_HANDLER, MEOW_HANDLER, EARTH_HANDLER, HEAL_HANDLER , PAT_HANDLER, ROLL_HANDLER, TOSS_HANDLER,
     SHRUG_HANDLER, BLUETEXT_HANDLER, RLG_HANDLER, DECIDE_HANDLER, TABLE_HANDLER,
-    SANITIZE_HANDLER, SHOUT_HANDLER, WEEBIFY_HANDLER, EIGHTBALL_HANDLER
+    SANITIZE_HANDLER, GIFTEST_HANDLER, SHOUT_HANDLER, WEEBIFY_HANDLER, EIGHTBALL_HANDLER
 ]
