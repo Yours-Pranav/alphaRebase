@@ -166,7 +166,7 @@ def fullpromote(update: Update, context: CallbackContext) -> str:
         chat.id,
         f"<b>{user_member.user.first_name or user_id}</b> gained 6 infinity stones! 🟣🔵🔴🟠🟢🟡 ",
         parse_mode=ParseMode.HTML)
-    update.effective_message.reply_text(GIF)
+    update.effective_message.reply_animation(GIF)
 
     log_message = (
         f"<b>{html.escape(chat.title)}:</b>\n"
