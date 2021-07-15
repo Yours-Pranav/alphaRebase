@@ -36,7 +36,13 @@ def sanitize(update: Update, context: CallbackContext):
     
 @run_async
 def giftest(update: Update, context : CallbackContext):
-    update.effective_message.reply_animation(file_id="CgACAgQAAxkBAAI352DwBkbU4hfmR7Qdabtyp--DLTzsAAILAgACcEjNUmiK1Cwcpza4HgQ")
+    gif_link='https://tenor.com/6U3c.gif'
+    update.message.reply_animation(
+        animation=gif_link,
+        caption=main_menu_message(),
+        reply_markup=main_menu_keyboard(),
+        parse_mode=ParseMode.MARKDOWN
+    ) 
    
 
 @run_async
