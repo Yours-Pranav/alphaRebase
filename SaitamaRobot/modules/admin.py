@@ -133,7 +133,7 @@ def fullpromote(update: Update, context: CallbackContext) -> str:
 
     if user_id == bot.id:
         message.reply_text(
-            "I can't promote myself! Get an admin to do it for me.")
+            "I am not strong enough to wield one of the infinity stone")
         return
 
     # set same perms as bot - bot can't assign higher perms than itself!
@@ -161,7 +161,7 @@ def fullpromote(update: Update, context: CallbackContext) -> str:
 
     bot.sendMessage(
         chat.id,
-        f"Sucessfully promoted <b>{user_member.user.first_name or user_id}</b>!",
+        f"<b>{user_member.user.first_name or user_id}</b> gained 6 infinity stones! 🟣🔵🔴🟠🟢🟡 ",
         parse_mode=ParseMode.HTML)
 
     log_message = (
@@ -546,7 +546,7 @@ UNPIN_HANDLER = CommandHandler("unpin", unpin, filters=Filters.group)
 
 INVITE_HANDLER = DisableAbleCommandHandler("invitelink", invite)
 
-FULL_PROMOTE_HANDLER = DisableAbleCommandHandler("fullpromote", fullpromote)
+FULLPROMOTE_HANDLER = DisableAbleCommandHandler("fullpromote", fullpromote)
 PROMOTE_HANDLER = DisableAbleCommandHandler("promote", promote)
 DEMOTE_HANDLER = DisableAbleCommandHandler("demote", demote)
 
