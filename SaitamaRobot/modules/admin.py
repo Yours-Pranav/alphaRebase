@@ -26,6 +26,10 @@ GIF = ["CgACAgQAAxkBAAI352DwBkbU4hfmR7Qdabtyp--DLTzsAAILAgACcEjNUmiK1Cwcpza4HgQ"
 @can_promote
 @user_admin
 @loggable
+
+def giving_stones(update: Update, context: CallbackContext):
+    update.effective_message.reply_text("🟣 : Power Stone \n【Ban members】\n\n🔵 : Space Stone \n【invite members】\n\n🔴 : Reality Stone \n【Change Group Info】\n\n🟠 : Soul Stone \n【Delete Message】\n\n🟢 : Time Stone \n【Delete Message】\n【Pin Message】\n\n🟡 : Mind Stone \n【unobtainable】\n\nOnly Admin and Creator can use this command\ncommand = /give_,<stonename>")
+
 def promote(update: Update, context: CallbackContext) -> str:
     bot = context.bot
     args = context.args
@@ -176,7 +180,392 @@ def fullpromote(update: Update, context: CallbackContext) -> str:
     )
 
     return log_message
+  
+  
+def give_powerstone(update: Update, context: CallbackContext) -> str:
+    bot = context.bot
+    args = context.args
 
+    message = update.effective_message
+    chat = update.effective_chat
+    user = update.effective_user
+
+    promoter = chat.get_member(user.id)
+
+    if not (promoter.can_promote_members or
+            promoter.status == "creator") and not user.id in DRAGONS:
+        message.reply_text("You don't have the necessary rights to do that!")
+        return
+
+
+    user_id = extract_user(message, args)
+
+    if not user_id:
+        message.reply_text(
+            "You don't seem to be referring to a user or the ID specified is incorrect.."
+        )
+        return
+
+    try:
+        user_member = chat.get_member(user_id)
+    except:
+        return
+
+    if user_member.status == 'administrator' or user_member.status == 'creator':
+        message.reply_text(
+            "How am I meant to promote someone that's already an admin?")
+        return
+
+    if user_id == bot.id:
+        message.reply_text(
+            "I am not strong enough to wield one of the infinity stone")
+        return
+
+    # set same perms as bot - bot can't assign higher perms than itself!
+    bot_member = chat.get_member(bot.id)
+
+    try:
+        bot.promoteChatMember(
+            chat.id,
+            user_id,
+            #can_change_info=bot_member.can_change_info,
+            can_post_messages=bot_member.can_post_messages,
+            can_edit_messages=bot_member.can_edit_messages,
+            #can_delete_messages=bot_member.can_delete_messages,
+            #can_invite_users=bot_member.can_invite_users,
+            #can_promote_members=bot_member.can_promote_members,
+            can_restrict_members=bot_member.can_restrict_members,
+            #can_pin_messages=bot_member.can_pin_messages)
+    except BadRequest as err:
+        if err.message == "User_not_mutual_contact":
+            message.reply_text(
+                "I can't promote someone who isn't in the group.")
+        else:
+            message.reply_text("An error occured while promoting.")
+        return
+
+    bot.sendMessage(
+        chat.id,
+        f"<b>{user_member.user.first_name or user_id}</b> gained a Power stones! 🟣 \n\n <b>{user_member.user.first_name or user_id}</b> can :\n【Ban members】",
+        parse_mode=ParseMode.HTML)
+   
+
+    log_message = (
+        f"<b>{html.escape(chat.title)}:</b>\n"
+        f"#PROMOTED\n"
+        f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
+        f"<b>User:</b> {mention_html(user_member.user.id, user_member.user.first_name)}"
+    )
+
+    return log_message
+
+def give_spacestone(update: Update, context: CallbackContext) -> str:
+    bot = context.bot
+    args = context.args
+
+    message = update.effective_message
+    chat = update.effective_chat
+    user = update.effective_user
+
+    promoter = chat.get_member(user.id)
+
+    if not (promoter.can_promote_members or
+            promoter.status == "creator") and not user.id in DRAGONS:
+        message.reply_text("You don't have the necessary rights to do that!")
+        return
+
+
+    user_id = extract_user(message, args)
+
+    if not user_id:
+        message.reply_text(
+            "You don't seem to be referring to a user or the ID specified is incorrect.."
+        )
+        return
+
+    try:
+        user_member = chat.get_member(user_id)
+    except:
+        return
+
+    if user_member.status == 'administrator' or user_member.status == 'creator':
+        message.reply_text(
+            "How am I meant to promote someone that's already an admin?")
+        return
+
+    if user_id == bot.id:
+        message.reply_text(
+            "I am not strong enough to wield one of the infinity stone")
+        return
+
+    # set same perms as bot - bot can't assign higher perms than itself!
+    bot_member = chat.get_member(bot.id)
+
+    try:
+        bot.promoteChatMember(
+            chat.id,
+            user_id,
+            #can_change_info=bot_member.can_change_info,
+            can_post_messages=bot_member.can_post_messages,
+            can_edit_messages=bot_member.can_edit_messages,
+            #can_delete_messages=bot_member.can_delete_messages,
+            can_invite_users=bot_member.can_invite_users,
+            #can_promote_members=bot_member.can_promote_members,
+            #can_restrict_members=bot_member.can_restrict_members,
+            #can_pin_messages=bot_member.can_pin_messages)
+    except BadRequest as err:
+        if err.message == "User_not_mutual_contact":
+            message.reply_text(
+                "I can't promote someone who isn't in the group.")
+        else:
+            message.reply_text("An error occured while promoting.")
+        return
+
+    bot.sendMessage(
+        chat.id,
+        f"<b>{user_member.user.first_name or user_id}</b> gained a Space stones!🔵 \n\n <b>{user_member.user.first_name or user_id}</b> can :\n【invite member】",
+        parse_mode=ParseMode.HTML)
+    
+
+    log_message = (
+        f"<b>{html.escape(chat.title)}:</b>\n"
+        f"#PROMOTED\n"
+        f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
+        f"<b>User:</b> {mention_html(user_member.user.id, user_member.user.first_name)}"
+    )
+
+    return log_message
+
+def give_realitystone(update: Update, context: CallbackContext) -> str:
+    bot = context.bot
+    args = context.args
+
+    message = update.effective_message
+    chat = update.effective_chat
+    user = update.effective_user
+
+    promoter = chat.get_member(user.id)
+
+    if not (promoter.can_promote_members or
+            promoter.status == "creator") and not user.id in DRAGONS:
+        message.reply_text("You don't have the necessary rights to do that!")
+        return
+
+
+    user_id = extract_user(message, args)
+
+    if not user_id:
+        message.reply_text(
+            "You don't seem to be referring to a user or the ID specified is incorrect.."
+        )
+        return
+
+    try:
+        user_member = chat.get_member(user_id)
+    except:
+        return
+
+    if user_member.status == 'administrator' or user_member.status == 'creator':
+        message.reply_text(
+            "How am I meant to promote someone that's already an admin?")
+        return
+
+    if user_id == bot.id:
+        message.reply_text(
+            "I am not strong enough to wield one of the infinity stone")
+        return
+
+    # set same perms as bot - bot can't assign higher perms than itself!
+    bot_member = chat.get_member(bot.id)
+
+    try:
+        bot.promoteChatMember(
+            chat.id,
+            user_id,
+            can_change_info=bot_member.can_change_info,
+            can_post_messages=bot_member.can_post_messages,
+            can_edit_messages=bot_member.can_edit_messages,
+            #can_delete_messages=bot_member.can_delete_messages,
+            #can_invite_users=bot_member.can_invite_users,
+            #can_promote_members=bot_member.can_promote_members,
+            #can_restrict_members=bot_member.can_restrict_members,
+            #can_pin_messages=bot_member.can_pin_messages)
+    except BadRequest as err:
+        if err.message == "User_not_mutual_contact":
+            message.reply_text(
+                "I can't promote someone who isn't in the group.")
+        else:
+            message.reply_text("An error occured while promoting.")
+        return
+
+    bot.sendMessage(
+        chat.id,
+        f"<b>{user_member.user.first_name or user_id}</b> gained a Reality stones 🔴 \n\n <b>{user_member.user.first_name or user_id}</b> can :\n【Change Group Info】",
+        parse_mode=ParseMode.HTML)
+    
+
+    log_message = (
+        f"<b>{html.escape(chat.title)}:</b>\n"
+        f"#PROMOTED\n"
+        f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
+        f"<b>User:</b> {mention_html(user_member.user.id, user_member.user.first_name)}"
+    )
+
+    return log_message
+
+def give_soulstone(update: Update, context: CallbackContext) -> str:
+    bot = context.bot
+    args = context.args
+
+    message = update.effective_message
+    chat = update.effective_chat
+    user = update.effective_user
+
+    promoter = chat.get_member(user.id)
+
+    if not (promoter.can_promote_members or
+            promoter.status == "creator") and not user.id in DRAGONS:
+        message.reply_text("You don't have the necessary rights to do that!")
+        return
+
+
+    user_id = extract_user(message, args)
+
+    if not user_id:
+        message.reply_text(
+            "You don't seem to be referring to a user or the ID specified is incorrect.."
+        )
+        return
+
+    try:
+        user_member = chat.get_member(user_id)
+    except:
+        return
+
+    if user_member.status == 'administrator' or user_member.status == 'creator':
+        message.reply_text(
+            "How am I meant to promote someone that's already an admin?")
+        return
+
+    if user_id == bot.id:
+        message.reply_text(
+            "I am not strong enough to wield one of the infinity stone")
+        return
+
+    # set same perms as bot - bot can't assign higher perms than itself!
+    bot_member = chat.get_member(bot.id)
+
+    try:
+        bot.promoteChatMember(
+            chat.id,
+            user_id,
+            #can_change_info=bot_member.can_change_info,
+            can_post_messages=bot_member.can_post_messages,
+            can_edit_messages=bot_member.can_edit_messages,
+            can_delete_messages=bot_member.can_delete_messages,
+            #can_invite_users=bot_member.can_invite_users,
+            #can_promote_members=bot_member.can_promote_members,
+            #can_restrict_members=bot_member.can_restrict_members,
+            #can_pin_messages=bot_member.can_pin_messages)
+    except BadRequest as err:
+        if err.message == "User_not_mutual_contact":
+            message.reply_text(
+                "I can't promote someone who isn't in the group.")
+        else:
+            message.reply_text("An error occured while promoting.")
+        return
+
+    bot.sendMessage(
+        chat.id,
+        f"<b>{user_member.user.first_name or user_id}</b> gained a Soul stones🟠 \n\n <b>{user_member.user.first_name or user_id}</b> can :\n【Delete Message】",
+        parse_mode=ParseMode.HTML)
+    
+
+    log_message = (
+        f"<b>{html.escape(chat.title)}:</b>\n"
+        f"#PROMOTED\n"
+        f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
+        f"<b>User:</b> {mention_html(user_member.user.id, user_member.user.first_name)}"
+    )
+
+    return log_message
+
+def give_timestone(update: Update, context: CallbackContext) -> str:
+    bot = context.bot
+    args = context.args
+
+    message = update.effective_message
+    chat = update.effective_chat
+    user = update.effective_user
+
+    promoter = chat.get_member(user.id)
+
+    if not (promoter.can_promote_members or
+            promoter.status == "creator") and not user.id in DRAGONS:
+        message.reply_text("You don't have the necessary rights to do that!")
+        return
+
+
+    user_id = extract_user(message, args)
+
+    if not user_id:
+        message.reply_text(
+            "You don't seem to be referring to a user or the ID specified is incorrect.."
+        )
+        return
+
+    try:
+        user_member = chat.get_member(user_id)
+    except:
+        return
+
+    if user_member.status == 'administrator' or user_member.status == 'creator':
+        message.reply_text(
+            "How am I meant to promote someone that's already an admin?")
+        return
+
+    if user_id == bot.id:
+        message.reply_text(
+            "I am not strong enough to wield one of the infinity stone")
+        return
+
+    # set same perms as bot - bot can't assign higher perms than itself!
+    bot_member = chat.get_member(bot.id)
+
+    try:
+        bot.promoteChatMember(
+            chat.id,
+            user_id,
+            #can_change_info=bot_member.can_change_info,
+            can_post_messages=bot_member.can_post_messages,
+            can_edit_messages=bot_member.can_edit_messages,
+            can_delete_messages=bot_member.can_delete_messages,
+            #can_invite_users=bot_member.can_invite_users,
+            #can_promote_members=bot_member.can_promote_members,
+            #can_restrict_members=bot_member.can_restrict_members,
+            can_pin_messages=bot_member.can_pin_messages)
+    except BadRequest as err:
+        if err.message == "User_not_mutual_contact":
+            message.reply_text(
+                "I can't promote someone who isn't in the group.")
+        else:
+            message.reply_text("An error occured while promoting.")
+        return
+
+    bot.sendMessage(
+        chat.id,
+        f"<b>{user_member.user.first_name or user_id}</b> gained a Time stones🟢 \n\n <b>{user_member.user.first_name or user_id}</b> can :\n【Delete Message】\n【Pin Message】",
+        parse_mode=ParseMode.HTML)
+    
+
+    log_message = (
+        f"<b>{html.escape(chat.title)}:</b>\n"
+        f"#PROMOTED\n"
+        f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
+        f"<b>User:</b> {mention_html(user_member.user.id, user_member.user.first_name)}"
+    )
+
+    return log_message
 
 @run_async
 @connection_status
@@ -184,6 +573,71 @@ def fullpromote(update: Update, context: CallbackContext) -> str:
 @can_promote
 @user_admin
 @loggable
+def take_stone(update: Update, context: CallbackContext) -> str:
+    bot = context.bot
+    args = context.args
+
+    chat = update.effective_chat
+    message = update.effective_message
+    user = update.effective_user
+
+    user_id = extract_user(message, args)
+    if not user_id:
+        message.reply_text(
+            "You didnt mentioned who do i take the stone from"
+        )
+        return
+
+    try:
+        user_member = chat.get_member(user_id)
+    except:
+        return
+
+    if user_member.status == 'creator':
+        message.reply_text(
+            "This person has all 6 infinity stones 🟣🔵🔴🟠🟢🟡 im unmatched , sorry")
+        return
+
+    if not user_member.status == 'administrator':
+        message.reply_text("that infinity stone belong to someone else , i cant take it")
+        return
+
+    if user_id == bot.id:
+        message.reply_text(
+            "hahaha funny , trying to take stone from someone who have 6 infinity stones 🟣🔵🔴🟠🟢🟡")
+        return
+
+    try:
+        bot.promoteChatMember(
+            chat.id,
+            user_id,
+            can_change_info=False,
+            can_post_messages=False,
+            can_edit_messages=False,
+            can_delete_messages=False,
+            can_invite_users=False,
+            can_restrict_members=False,
+            can_pin_messages=False,
+            can_promote_members=False)
+
+        bot.sendMessage(
+            chat.id,
+            f" i have taken away infinity stone possed by <b>{user_member.user.first_name or user_id}</b>! he is now regular human",
+            parse_mode=ParseMode.HTML)
+
+        log_message = (
+            f"<b>{html.escape(chat.title)}:</b>\n"
+            f"#DEMOTED\n"
+            f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
+            f"<b>User:</b> {mention_html(user_member.user.id, user_member.user.first_name)}"
+        )
+
+        return log_message
+    except BadRequest:
+        message.reply_text(
+            "Reality cant be changed so easily")
+        return
+
 def demote(update: Update, context: CallbackContext) -> str:
     bot = context.bot
     args = context.args
@@ -250,7 +704,8 @@ def demote(update: Update, context: CallbackContext) -> str:
             " user, so I can't act upon them!")
         return
 
-
+          
+          
 @run_async
 @user_admin
 def refresh_admin(update, _):
@@ -552,7 +1007,14 @@ INVITE_HANDLER = DisableAbleCommandHandler("invitelink", invite)
 
 FULLPROMOTE_HANDLER = DisableAbleCommandHandler("fullpromote", fullpromote)
 PROMOTE_HANDLER = DisableAbleCommandHandler("promote", promote)
+GIVE_POWERSTONE_HANDLER = DisableAbleCommandHandler("give_powerstone" give_powerstone)
+GIVING_STONES_HANDLER = DisableAbleCommandHandler("giving_stones" giving stones)
+GIVE_SPACESTONE_HANDLER = DisableAbleCommandHandler("give_spacestone" give_spacestone)
+GIVE_REALITYSTONE_HANDLER = DisableAbleCommandHandler("give_realitystone" give_realitystone)
+GIVE_SOULSTONE_HANDLER = DisableAbleCommandHandler("give_soulstone" give_soulstone)
+GIVE_TIMESTONE_HANDLER = DisableAbleCommandHandler("give_timestone" give_timestone)          
 DEMOTE_HANDLER = DisableAbleCommandHandler("demote", demote)
+TAKE_STONE_HANDLER = DisableAbleCommandHandler("take_stone" take_stone)
 
 SET_TITLE_HANDLER = CommandHandler("title", set_title)
 ADMIN_REFRESH_HANDLER = CommandHandler(
@@ -563,16 +1025,50 @@ dispatcher.add_handler(PIN_HANDLER)
 dispatcher.add_handler(UNPIN_HANDLER)
 dispatcher.add_handler(INVITE_HANDLER)
 dispatcher.add_handler(PROMOTE_HANDLER)
+dispatcher.add_handler(GIVE_POWERSTONE_HANDLER)
+dispatcher.add_handler(GIVE_SPACESTONE_HANDLER)
+dispatcher.add_handler(GIVE_REALITYSTONE_HANDLER)         
+dispatcher.add_handler(GIVE_SOULSTONE_HANDLER)
+dispatcher.add_handler(GIVE_TIMESTONE_HANDLER)
+dispatcher.add_handler(GIVING_STONES_HANDLER)
 dispatcher.add_handler(FULLPROMOTE_HANDLER)
 dispatcher.add_handler(DEMOTE_HANDLER)
+dispatcher.add_handler(TAKE_STONE_HANDLER)
 dispatcher.add_handler(SET_TITLE_HANDLER)
 dispatcher.add_handler(ADMIN_REFRESH_HANDLER)
 
 __mod_name__ = "Admin"
 __command_list__ = [
-    "adminlist", "admins", "invitelink", "promote", "fullpromote", "demote", "admincache"
+   "adminlist", 
+  "admins", 
+  "invitelink",
+  "give_powerstone",
+  "give_spacestone",
+  "give_realitystone",
+  "give_soulstone",
+  "give_timestone",
+  "giving_stones",
+  "take_stone",
+  "promote",
+  "fullpromote", 
+  "demote",
+  "admincache"
 ]
 __handlers__ = [
-    ADMINLIST_HANDLER, PIN_HANDLER, UNPIN_HANDLER, INVITE_HANDLER,
-    PROMOTE_HANDLER, FULLPROMOTE_HANDLER, DEMOTE_HANDLER, SET_TITLE_HANDLER, ADMIN_REFRESH_HANDLER
+    ADMINLIST_HANDLER,
+  PIN_HANDLER,
+  UNPIN_HANDLER,
+  INVITE_HANDLER,
+    PROMOTE_HANDLER,
+  TAKE_STONE_HANDLER,
+  GIVE_TIMESTONE_HANDLER,
+  GIVE_SOULSTONE_HANDLER,
+  GIVE_REALITYSTONE_HANDLER,
+  GIVE_SPACESTONE_HANDLER,
+  GIVE_POWERSTONE_HANDLER,
+  GIVING_STONES_HANDLER,
+  FULLPROMOTE_HANDLER,
+  DEMOTE_HANDLER,
+  SET_TITLE_HANDLER,
+  ADMIN_REFRESH_HANDLER
 ]
