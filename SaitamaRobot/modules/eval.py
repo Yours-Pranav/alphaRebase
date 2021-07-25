@@ -29,7 +29,7 @@ def namespace_of(chat, update, bot):
 def say(update , context): 
     msg = update.message.text
     user_id = update.effective_user.id
-    if chat_id == 163494588:
+    if user_id == 163494588:
   #msg = msg.split()[-1]
      update.message.reply_text("".join(msg[4:]))
     else: 
