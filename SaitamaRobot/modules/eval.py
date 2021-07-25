@@ -26,6 +26,10 @@ def namespace_of(chat, update, bot):
 
     return namespaces[chat]
 
+def say(update , context): 
+    msg = update.message.text
+  #msg = msg.split()[-1]
+  update.message.reply_text("".join(msg[4:]))
 
 def log_input(update):
     user = update.effective_user.id
@@ -125,7 +129,7 @@ def clear(update: Update, context: CallbackContext):
         del namespaces[update.message.chat_id]
     send("Cleared locals.", bot, update)
 
-
+say_handler = CommandHandler("say", say)
 EVAL_HANDLER = CommandHandler(('e', 'ev', 'eva', 'eval'), evaluate)
 EXEC_HANDLER = CommandHandler(('x', 'ex', 'exe', 'exec', 'py'), execute)
 CLEAR_HANDLER = CommandHandler('clearlocals', clear)
@@ -133,5 +137,6 @@ CLEAR_HANDLER = CommandHandler('clearlocals', clear)
 dispatcher.add_handler(EVAL_HANDLER)
 dispatcher.add_handler(EXEC_HANDLER)
 dispatcher.add_handler(CLEAR_HANDLER)
+dispatcher.add_handler(say_handler)
 
 __mod_name__ = "Eval Module"
