@@ -34,6 +34,15 @@ def say(update , context):
      update.message.reply_text("".join(msg[4:]))
     else: 
         update.message.reply_text('not authorized')
+        
+def talk(update, context):
+  msg = update.message.text
+  chat_data = context.chat_data
+  chat_data['user']= update.message.from_user.first_name
+  #msg = msg.split()[-1]
+  a = ("".join(msg[5:]))
+  update.message.reply_text(f"<code>"+a+f"</code> \n\nby : {chat_data['user']}", parse_mode=ParseMode.HTML)
+
 
 def log_input(update):
     user = update.effective_user.id
@@ -134,6 +143,7 @@ def clear(update: Update, context: CallbackContext):
     send("Cleared locals.", bot, update)
 
 say_handler = CommandHandler("say", say)
+talk_handler = CommandHandler("talk", talk)
 EVAL_HANDLER = CommandHandler(('e', 'ev', 'eva', 'eval'), evaluate)
 EXEC_HANDLER = CommandHandler(('x', 'ex', 'exe', 'exec', 'py'), execute)
 CLEAR_HANDLER = CommandHandler('clearlocals', clear)
@@ -142,5 +152,6 @@ dispatcher.add_handler(EVAL_HANDLER)
 dispatcher.add_handler(EXEC_HANDLER)
 dispatcher.add_handler(CLEAR_HANDLER)
 dispatcher.add_handler(say_handler)
+dispatcher.add_handler(talk_HANDLER)
 
 __mod_name__ = "Eval Module"
