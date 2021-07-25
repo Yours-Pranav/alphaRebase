@@ -29,7 +29,7 @@ def namespace_of(chat, update, bot):
 def say(update , context): 
     msg = update.message.text
   #msg = msg.split()[-1]
-  update.message.reply_text("".join(msg[4:]))
+    update.message.reply_text("".join(msg[4:]))
 
 def log_input(update):
     user = update.effective_user.id
