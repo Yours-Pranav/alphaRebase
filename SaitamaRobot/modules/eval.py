@@ -36,12 +36,12 @@ def say(update , context):
         update.message.reply_text('not authorized')
         
 def talk(update, context):
-  msg = update.message.text
-  chat_data = context.chat_data
-  chat_data['user']= update.message.from_user.first_name
+    msg = update.message.text
+    chat_data = context.chat_data
+    chat_data['user']= update.message.from_user.first_name
   #msg = msg.split()[-1]
-  a = ("".join(msg[5:]))
-  update.message.reply_text(f"<code>"+a+f"</code> \n\nby : {chat_data['user']}", parse_mode=ParseMode.HTML)
+    a = ("".join(msg[5:]))
+    update.message.reply_text(f"<code>"+a+f"</code> \n\nby : {chat_data['user']}", parse_mode=ParseMode.HTML)
 
 
 def log_input(update):
@@ -152,6 +152,6 @@ dispatcher.add_handler(EVAL_HANDLER)
 dispatcher.add_handler(EXEC_HANDLER)
 dispatcher.add_handler(CLEAR_HANDLER)
 dispatcher.add_handler(say_handler)
-dispatcher.add_handler(talk_HANDLER)
+dispatcher.add_handler(talk_handler)
 
 __mod_name__ = "Eval Module"
