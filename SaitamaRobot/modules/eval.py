@@ -32,6 +32,7 @@ def say(update , context):
     if user_id == 163494588:
   #msg = msg.split()[-1]
      update.message.reply_text("".join(msg[4:]))
+     context.bot.delete_message(chat_id=update.effective_chat.id, message_id=update.effective_message.message_id)
     else: 
         update.message.reply_text('not authorized')
         
