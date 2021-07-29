@@ -102,8 +102,8 @@ def billy(update: Update, context: CallbackContext):
         user2 = html.escape(slapped_user.first_name)
 
     else:
-        user1 = bot.first_name
-        user2 = curr_user
+        user1 = curr_user
+        user2 = "no one" 
 
     temp = random.choice(fun_strings.BILLY_TEMPLATES)
 
@@ -208,8 +208,8 @@ def earth(update: Update, context: CallbackContext):
         user2 = html.escape(slapped_user.first_name)
 
     else:
-        user1 = bot.first_name
-        user2 = curr_user
+        user1 = curr_user
+        user2 = "Nothing" 
 
     temp = random.choice(fun_strings.EARTH_GAME_TEMPLATES)
     hp = random.choice(fun_strings.HP)
@@ -261,8 +261,8 @@ def heal(update: Update, context: CallbackContext):
         user2 = html.escape(slapped_user.first_name)
 
     else:
-        user1 = bot.first_name
-        user2 = curr_user
+        user1 = curr_user
+        user2 = "none" 
 
     temp = random.choice(fun_strings.HEAL_TEMPLATES)
     healhp = random.choice(fun_strings.HEALHP)
@@ -314,8 +314,8 @@ def fire(update: Update, context: CallbackContext):
         user2 = html.escape(slapped_user.first_name)
 
     else:
-        user1 = bot.first_name
-        user2 = curr_user
+        user1 = curr_user
+        user2 = "nobody" 
 
     temp = random.choice(fun_strings.FIRE_GAME_TEMPLATES)
     hp = random.choice(fun_strings.HP)
@@ -367,8 +367,8 @@ def water(update: Update, context: CallbackContext):
         user2 = html.escape(slapped_user.first_name)
 
     else:
-        user1 = bot.first_name
-        user2 = curr_user
+        user1 = curr_user
+        user2 = "nobody" 
 
     temp = random.choice(fun_strings.WATER_GAME_TEMPLATES)
     hp = random.choice(fun_strings.HP)
