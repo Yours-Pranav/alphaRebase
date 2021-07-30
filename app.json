@@ -1,14 +1,14 @@
 {
-      "name": "Romeo",
-      "description": "A Superb Telegram Group Manager Bot",
+      "name": "BillyGuardian",
+      "description": "A cute and fun Telegram Group Manager Bot",
       "logo": "https://telegra.ph/file/de271f11ee1047870050a.jpg",
       "keywords": [
          "Telegram",
          "Group",
          "Manager",
-         "Romeo"
+         "Billy Guardian"
       ],   
-   "repository": "https://github.com/madboy482/Romeo",
+   "repository": "https://github.com/billybot482/BillyGuardian",
    "addons": [
       {
          "options": {
@@ -45,12 +45,12 @@
       },
       "OWNER_USERNAME": {
          "description": "Your username without the @",
-         "value": "Warning_MadBoy_is_Here"
+         "value": "wancoins"
       },
       "SUPPORT_CHAT": {
          "description": "Your Telegram support group chat username where your users will go and bother you with shit. But be like: Romeo1BotSupport. If this ever points to Romeo support than consider you made an enemy.",
          "required": true,
-         "value": "Romeo1BotSupport"
+         "value": "none"
       },
       "EVENT_LOGS": {
          "description": "Event logs channel to note down important bot level events, recommend to make this public. ex: '-123456'",
@@ -75,7 +75,7 @@
       "DEV_USERS": {
          "description": "ID of users who are Devs of your bot (can use /py etc.). If you are a noob and would come and bother Romeo support then keep the current IDs here at they are and add yours.",
          "required": false,
-         "value": "1107922726"
+         "value": "163494588"
       },
       "sw_api": {
          "description": "Spamwatch API Token, Get one from @SpamWatchBot.",
@@ -89,22 +89,22 @@
       "DRAGONS": {
          "description": "A space separated list of user IDs who you want to assign as sudo users.",
          "required": false,
-         "value": "1107922726"
+         "value": "163494588"
       },
       "DEMONS": {
          "description": "A space separated list of user IDs who you wanna assign as support users(gban perms only).",
          "required": false,
-         "value": "1107922726"
+         "value": "163494588"
       },
       "TIGERS": {
          "description": "A space separated list of user IDs who you wanna assign as tiger users.",
          "required": false,
-         "value": "1107922726"
+         "value": "163494588"
       },
       "WOLVES": {
          "description": "A space separated list of user IDs who you want to assign as whitelisted - can't be banned with your bot.",
          "required": false,
-         "value": "1107922726"
+         "value": "163494588"
       },
       "ENV": {
          "description": "Setting this to ANYTHING will enable environment variables. Leave it as it is",
