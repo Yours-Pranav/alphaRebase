@@ -62,7 +62,8 @@ def totranslate(update: Update, context: CallbackContext):
 
         trl = google_translator()
         if source_lang is None:
-            detection = trl.detect(text)
+            detection = "test"
+            #detection = trl.detect(text)
             trans_str = trl.translate(text, lang_tgt=dest_lang)
             return message.reply_text(
                 f"Translated from `{detection[0]}` to `{dest_lang}`:\n`{trans_str}`",
