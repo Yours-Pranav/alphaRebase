@@ -3,7 +3,54 @@ from SaitamaRobot import CASH_API_KEY, dispatcher
 from telegram import Update, ParseMode
 from telegram.ext import CallbackContext, CommandHandler, run_async
 
+import logging
+from telegram import InlineQueryResultArticle, InputTextMessageContent
+from telegram.ext import CommandHandler, InlineQueryHandler, ConversationHandler
+from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update, ParseMode
+from telegram.ext import Updater, CallbackQueryHandler, CallbackContext
+import random
+import time
+import requests
+from pycoingecko import CoinGeckoAPI
 
+num = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "."]
+b = ""
+
+a = data['bpi']['USD']['rate']
+for i in a:
+    if i in num:
+        b += i
+c = b.split(".")
+d = int(c[0]) + int(c[1])/100 # successfully convert to int
+
+e = int(d*74)
+INR =("{:,}".format(e)) # convert to INR
+
+f = int(d*4.22)
+MYR = ("{:,}".format(f)) # convert to MYR
+
+g = int(d*1.36)
+AUD = ("{:,}".format(g))
+
+h = int(d*14440)
+IDR = ("{:,}".format(h))
+
+def btc(update , context):
+
+
+    msg = context.bot.send_message(chat_id=update.effective_chat.id, text=f"<b>BTC :</b> {data['bpi']['USD']['rate']}$ 💶 <B>USD</b> \n"
+                                                                          f"<b>BTC :</b> {data['bpi']['EUR']['rate']}$ 💵 <B>EUR</b>\n"
+                                                                          f"<b>BTC :</b> {data['bpi']['GBP']['rate']}$ 💷 <B>GBP</b>\n\n"
+                                                                          f"<b>BTC :</b> {INR}  <b>INR</b>\n"
+                                                                          f"<b>BTC :</b> {IDR}  <b>IDR</b>\n"
+                                                                          f"<b>BTC :</b> {AUD}  <b>AUD</b>\n"
+                                                                          f"<b>BTC :</b> {MYR}  <b>MYR</b>\n\n\n"
+                                                                          f"<b>Updated since:</b> {data['time']['updated']}\n"
+                                                                          f"This data was produced from the CoinDesk Bitcoin Price Index (USD)."
+                                                                          f" <code> credit to billy</code>"
+
+
+                                   , parse_mode = ParseMode.HTML)
 @run_async
 def convert(update: Update, context: CallbackContext):
     args = update.effective_message.text.split(" ")
@@ -47,8 +94,10 @@ def convert(update: Update, context: CallbackContext):
 
 
 CONVERTER_HANDLER = CommandHandler('cash', convert)
+BTC_HANDLER = CommandHandler('btc', btc)
 
 dispatcher.add_handler(CONVERTER_HANDLER)
+dispatcher.add_handler(BTC_HANDLER)
 
-__command_list__ = ["cash"]
-__handlers__ = [CONVERTER_HANDLER]
+__command_list__ = ["cash" , "btc"]
+__handlers__ = [CONVERTER_HANDLER , BTC_HANDLER]
