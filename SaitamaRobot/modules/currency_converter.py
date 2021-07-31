@@ -53,7 +53,7 @@ def btc(update , context):
                                                                           f" <code> credit to billy</code>"
 
 
-                                   , parse_mode = ParseMode.HTML)
+                                   , parse_mode = ParseMode.HTML)'''
 @run_async
 def convert(update: Update, context: CallbackContext):
     args = update.effective_message.text.split(" ")
@@ -95,12 +95,12 @@ def convert(update: Update, context: CallbackContext):
             f"*Invalid Args!!:* Required 3 But Passed {len(args) -1}",
             parse_mode=ParseMode.MARKDOWN)
 
-'''
+
 CONVERTER_HANDLER = CommandHandler('cash', convert)
-'''BTC_HANDLER = CommandHandler('btc', btc)'''
+#BTC_HANDLER = CommandHandler('btc', btc)
 
 dispatcher.add_handler(CONVERTER_HANDLER)
-'''dispatcher.add_handler(BTC_HANDLER)'''
+#dispatcher.add_handler(BTC_HANDLER)
 
 __command_list__ = ["cash"]
 __handlers__ = [CONVERTER_HANDLER]
