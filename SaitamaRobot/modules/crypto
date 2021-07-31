@@ -50,10 +50,16 @@ def btc(update , context):
 
                                    , parse_mode = ParseMode.HTML)
                                    
-dispatcher.add_handler(btc_handler)
+ANIME_HANDLER = DisableAbleCommandHandler("btc, btc)
 
 
-btc_handler = CommandHandler("btc", btc)
+dispatcher.add_handler(BTC_HANDLER)
 
 
-updater.start_polling()
+__mod_name__ = "crypto"
+__command_list__ = [
+    "btc"
+]
+__handlers__ = [
+    BTC_HANDLER
+]
