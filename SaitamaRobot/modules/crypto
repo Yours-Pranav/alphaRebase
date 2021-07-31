@@ -6,7 +6,9 @@ from telegram.ext import Updater, CallbackQueryHandler, CallbackContext
 import random
 import time
 import requests
-from pycoingecko import CoinGeckoAPI
+
+r = requests.get("https://api.coindesk.com/v1/bpi/currentprice.json")
+data = r.json()
 
 num = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "."]
 b = ""
