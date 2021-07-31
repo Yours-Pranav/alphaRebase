@@ -12,7 +12,7 @@ import random
 import time
 import requests
 
-
+'''
 r = requests.get("https://api.coindesk.com/v1/bpi/currentprice.json")
 data = r.json()
 
@@ -95,12 +95,12 @@ def convert(update: Update, context: CallbackContext):
             f"*Invalid Args!!:* Required 3 But Passed {len(args) -1}",
             parse_mode=ParseMode.MARKDOWN)
 
-
+'''
 CONVERTER_HANDLER = CommandHandler('cash', convert)
-BTC_HANDLER = CommandHandler('btc', btc)
+'''BTC_HANDLER = CommandHandler('btc', btc)'''
 
 dispatcher.add_handler(CONVERTER_HANDLER)
-dispatcher.add_handler(BTC_HANDLER)
+'''dispatcher.add_handler(BTC_HANDLER)'''
 
-__command_list__ = ["cash" , "btc"]
-__handlers__ = [CONVERTER_HANDLER , BTC_HANDLER]
+__command_list__ = ["cash" , #"btc"]
+__handlers__ = [CONVERTER_HANDLER , #BTC_HANDLER]
