@@ -8,9 +8,6 @@ import time
 import requests
 from pycoingecko import CoinGeckoAPI
 
-updater = Updater(token='1338281900:AAERPwsHoJdy52GBdy1saIQ2lEr0NJF76yI', use_context=True)
-dispatcher = updater.dispatcher
-
 num = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "."]
 b = ""
 
@@ -50,7 +47,7 @@ def btc(update , context):
 
                                    , parse_mode = ParseMode.HTML)
                                    
-ANIME_HANDLER = DisableAbleCommandHandler("btc, btc)
+BTC_HANDLER = DisableAbleCommandHandler("btc, btc)
 
 
 dispatcher.add_handler(BTC_HANDLER)
