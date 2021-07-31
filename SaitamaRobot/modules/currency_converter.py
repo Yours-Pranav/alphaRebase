@@ -102,5 +102,5 @@ CONVERTER_HANDLER = CommandHandler('cash', convert)
 dispatcher.add_handler(CONVERTER_HANDLER)
 '''dispatcher.add_handler(BTC_HANDLER)'''
 
-__command_list__ = ["cash" , #"btc"]
-__handlers__ = [CONVERTER_HANDLER , #BTC_HANDLER]
+__command_list__ = ["cash"]
+__handlers__ = [CONVERTER_HANDLER]
