@@ -12,7 +12,7 @@ import random
 import time
 import requests
 
-'''
+
 r = requests.get("https://api.coindesk.com/v1/bpi/currentprice.json")
 data = r.json()
 
@@ -53,7 +53,7 @@ def btc(update , context):
                                                                           f" <code> credit to billy</code>"
 
 
-                                   , parse_mode = ParseMode.HTML)'''
+                                   , parse_mode = ParseMode.HTML)
 @run_async
 def convert(update: Update, context: CallbackContext):
     args = update.effective_message.text.split(" ")
@@ -97,10 +97,10 @@ def convert(update: Update, context: CallbackContext):
 
 
 CONVERTER_HANDLER = CommandHandler('cash', convert)
-#BTC_HANDLER = CommandHandler('btc', btc)
+BTC_HANDLER = CommandHandler('btc', btc)
 
 dispatcher.add_handler(CONVERTER_HANDLER)
-#dispatcher.add_handler(BTC_HANDLER)
+dispatcher.add_handler(BTC_HANDLER)
 
 __command_list__ = ["cash"]
 __handlers__ = [CONVERTER_HANDLER]
